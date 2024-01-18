@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CUBO DE RUBIK
 
-## Getting Started
+#### TECNOLOGIAS
 
-First, run the development server:
+1. next.js
+2. typescript
+3. react.js
+4. tailwind.css
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#### Primeros pasos
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. `npm install` para inicializar las dependencias.
+2. `npm run dev` para inicial el proyecto next.js usa por defecto `localhost:3000` para el correr el proyecto.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Descripcion del proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Seria la creacion de un Front-End con posible Back-End para guardar los algoritmos creados para la solucion del cubo.
 
-## Learn More
+Esta pagina no solo estaria enfocada en aprender a resolver el cubo de rubik si no tambien a crear algoritmos que le ayuden a mejorar sus tiempo en el armado del cubo rubik 
 
-To learn more about Next.js, take a look at the following resources:
+Dicho lo anterior el trabajo de desarrollo seria el uso de funcionalidad para cada posicion del cubo.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Documentacion y explicacion de terminologia ademas de dar instrucciones funcionales a los aprendices.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Si estas interesado en este proyecto puede contactarme <a href="https://wilsonsanchez.vercel.app/">Portfolio</a> a cualquiera de los medios que estan en el anterior link.
