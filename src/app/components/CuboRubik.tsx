@@ -1,138 +1,1263 @@
-import React from "react";
-const clases = [
-  {
-    w1: 'white'
-  },
-  {
-    r1: 'red'
-  },
-  {
-    b1: 'blue'
-  },
-  {
-    o1: 'orange'
-  },
-  {
-    g1: 'green'
-  },
-  {
-    y1: 'yellow'
-  },
-  {
-    w2: 'white'
-  },
-  {
-    y2: 'yellow'
-  },
-]
-const CuboRubik = () => {
+"use client";
+import { useState } from "react";
 
-  const white:White = {
-    a: 'w1',
-    b: 'w2',
-    c: 'w3',
-    d: 'w4',
-    e: 'w5',
-    f: 'w6',
-    g: 'w7',
-    h: 'w8',
-    i: 'w9'
+const CuboRubik = () => {
+  const resuelto: Resuelto = {
+    w1: "w1",
+    w2: "w2",
+    w3: "w3",
+    w4: "w4",
+    w5: "w5",
+    w6: "w6",
+    w7: "w7",
+    w8: "w8",
+    w9: "w9",
+    y1: "y1",
+    y2: "y2",
+    y3: "y3",
+    y4: "y4",
+    y5: "y5",
+    y6: "y6",
+    y7: "y7",
+    y8: "y8",
+    y9: "y9",
+    r1: "r1",
+    r2: "r2",
+    r3: "r3",
+    r4: "r4",
+    r5: "r5",
+    r6: "r6",
+    r7: "r7",
+    r8: "r8",
+    r9: "r9",
+    o1: "o1",
+    o2: "o2",
+    o3: "o3",
+    o4: "o4",
+    o5: "o5",
+    o6: "o6",
+    o7: "o7",
+    o8: "o8",
+    o9: "o9",
+    g1: "g1",
+    g2: "g2",
+    g3: "g3",
+    g4: "g4",
+    g5: "g5",
+    g6: "g6",
+    g7: "g7",
+    g8: "g8",
+    g9: "g9",
+    b1: "b1",
+    b2: "b2",
+    b3: "b3",
+    b4: "b4",
+    b5: "b5",
+    b6: "b6",
+    b7: "b7",
+    b8: "b8",
+    b9: "b9",
+  };
+  const [resolviendo, setResolviendo] = useState<Resolviendo>({
+    w1: "w1", //esquina con g1 y r1
+    w2: "w2", //arista con g2
+    w3: "w3", //esquina con g3 y o3
+    w4: "w4", //arista con r4
+    w5: "w5", //centro
+    w6: "w6", //arista con o6
+    w7: "w7", //esquina con r7 y b7
+    w8: "w8", //arista con b8
+    w9: "w9", //esquina con o9 y b9
+
+    y1: "y1", //esquina con b1 y o1
+    y2: "y2", //arista con  r2
+    y3: "y3", //esquina con b3 y r3
+    y4: "y4", //arista con b4
+    y5: "y5", //centro centro
+    y6: "y6", //arista con g6
+    y7: "y7", //esquina con g7 y o7
+    y8: "y8", //arista con  o8
+    y9: "y9", //esquina con g9 y r9
+
+    r1: "r1", //esquina con w1 y g1
+    r2: "r2", //arista con y2
+    r3: "r3", //esquina con y3 y b3
+    r4: "r4", //arista con  w4
+    r5: "r5", //centro //centro
+    r6: "r6", //arista con b6
+    r7: "r7", //esquina con w7 y b7
+    r8: "r8", //arista con  g8
+    r9: "r9", //esquina con y9 g9
+
+    o1: "o1", //esquina con y1 y b1
+    o2: "o2", //arista con b2
+    o3: "o3", //esquina con g3 y w3
+    o4: "o4", //arista con g4
+    o5: "o5", //centro //centro
+    o6: "o6", //arista con w6
+    o7: "o7", //esquina con g7 y y7
+    o8: "o8", //arista con  y8
+    o9: "o9", //esquina con w9 y b9
+
+    g1: "g1", //esquina con w1 y r1
+    g2: "g2", //arista con w2
+    g3: "g3", //esquina con w3 y o3
+    g4: "g4", //arista con  o4
+    g5: "g5", //centro //centro
+    g6: "g6", //arista con y6
+    g7: "g7", //esquina con y7 y o7
+    g8: "g8", //arista con r8
+    g9: "g9", //esquina con y9 yr9
+
+    b1: "b1", //esquina con y1 yo1
+    b2: "b2", //arista con o2
+    b3: "b3", //esquina con y3 y r3
+    b4: "b4", //arista con y4
+    b5: "b5", //centro //centro
+    b6: "b6", //arista con r6
+    b7: "b7", //esquina con w7 y r7
+    b8: "b8", //arista con w8
+    b9: "b9", //esquina con w9 y o9
+  });
+
+  function contarIguales(resuelto: Resuelto, resolviendo: Resolviendo): number {
+    let coincidencias = 0;
+    const coincidenciasPorPropiedad: Coincidencias = {};
+    for (const key in resuelto) {
+      if (
+        resuelto.hasOwnProperty(key) &&
+        resolviendo.hasOwnProperty(key) &&
+        resuelto[key as keyof Resuelto] ===
+          resolviendo[key as keyof Resolviendo]
+      ) {
+        coincidencias++;
+        coincidenciasPorPropiedad[key as keyof Resuelto] = true;
+      } else {
+        coincidenciasPorPropiedad[key as keyof Resuelto] = false;
+      }
+    }
+    return coincidencias;
   }
-  const yellow:Yellow = {
-    a: 'w1',
-    b: 'w2',
-    c: 'w3',
-    d: 'w4',
-    e: 'w5',
-    f: 'w6',
-    g: 'w7',
-    h: 'w8',
-    i: 'w9'
+  const cantidadCoincidencias = contarIguales(resuelto, resolviendo);
+  const a: Resolviendo = resolviendo;
+  function rotacionU() {
+    setResolviendo({
+      ...resolviendo,
+      w1: a.w7,
+      r1: a.b7,
+      g1: a.r7,
+      w2: a.w4,
+      g2: a.r4,
+      w3: a.w1,
+      g3: a.r1,
+      o3: a.g1,
+      w4: a.w8,
+      r4: a.b8,
+      w6: a.w2,
+      o6: a.g2,
+      w7: a.w9,
+      b7: a.o9,
+      r7: a.b9,
+      w8: a.w6,
+      b8: a.o6,
+      w9: a.w3,
+      b9: a.o3,
+      o9: a.g3,
+    });
+  }
+
+  function rotacionUp() {
+    setResolviendo({
+      ...resolviendo,
+      w1: a.w3,
+      r1: a.g3,
+      g1: a.o3,
+      w2: a.w6,
+      g2: a.o6,
+      w3: a.w9,
+      g3: a.o9,
+      o3: a.b9,
+      w4: a.w2,
+      r4: a.g2,
+      w6: a.w8,
+      o6: a.b8,
+      w7: a.w1,
+      b7: a.r1,
+      r7: a.g1,
+      w8: a.w4,
+      b8: a.r4,
+      w9: a.w7,
+      b9: a.r7,
+      o9: a.b7,
+    });
   }
 
   return (
     <div className="w-2/5 m-4  justify-center items-center">
+      <h1>Hay </h1>
+      <h1>{cantidadCoincidencias}</h1> <h1>fichas bien puestas</h1>
+      <div>
+        <button onClick={rotacionU} className="mx-2">
+          U
+        </button>
+        <button onClick={rotacionUp}>U`</button>
+      </div>
+      <div>
+        <button onClick={rotacionU} className="mx-2">
+          D
+        </button>
+        <button onClick={rotacionUp}>D`</button>
+      </div>
       <div className="containerCara">
         {/*//todo section color green */}
         <section className="cara">
-          <div className="green">G9</div>
-          <div className="green">G6</div>
-          <div className="green">G7</div>
-          <div className="green">G8</div>
-          <div className="green">G5</div>
-          <div className="green">G4</div>
-          <div className="green">G1</div>
-          <div className="green">G2</div>
-          <div className="green">G3</div>
+          <div
+            className={
+              resolviendo.g9[0] === "w"
+                ? "white"
+                : resolviendo.g9[0] === "y"
+                ? "yellow"
+                : resolviendo.g9[0] === "r"
+                ? "red"
+                : resolviendo.g9[0] === "o"
+                ? "orange"
+                : resolviendo.g9[0] === "b"
+                ? "blue"
+                : resolviendo.g9[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.g9}
+          </div>
+          <div
+            className={
+              resolviendo.g6[0] === "w"
+                ? "white"
+                : resolviendo.g6[0] === "y"
+                ? "yellow"
+                : resolviendo.g6[0] === "r"
+                ? "red"
+                : resolviendo.g6[0] === "o"
+                ? "orange"
+                : resolviendo.g6[0] === "b"
+                ? "blue"
+                : resolviendo.g6[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.g6}
+          </div>
+          <div
+            className={
+              resolviendo.g7[0] === "w"
+                ? "white"
+                : resolviendo.g7[0] === "y"
+                ? "yellow"
+                : resolviendo.g7[0] === "r"
+                ? "red"
+                : resolviendo.g7[0] === "o"
+                ? "orange"
+                : resolviendo.g7[0] === "b"
+                ? "blue"
+                : resolviendo.g7[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.g7}
+          </div>
+          <div
+            className={
+              resolviendo.g8[0] === "w"
+                ? "white"
+                : resolviendo.g8[0] === "y"
+                ? "yellow"
+                : resolviendo.g8[0] === "r"
+                ? "red"
+                : resolviendo.g8[0] === "o"
+                ? "orange"
+                : resolviendo.g8[0] === "b"
+                ? "blue"
+                : resolviendo.g8[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.g8}
+          </div>
+          <div
+            className={
+              resolviendo.g5[0] === "w"
+                ? "white"
+                : resolviendo.g5[0] === "y"
+                ? "yellow"
+                : resolviendo.g5[0] === "r"
+                ? "red"
+                : resolviendo.g5[0] === "o"
+                ? "orange"
+                : resolviendo.g5[0] === "b"
+                ? "blue"
+                : resolviendo.g5[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.g5}
+          </div>
+          <div
+            className={
+              resolviendo.g4[0] === "w"
+                ? "white"
+                : resolviendo.g4[0] === "y"
+                ? "yellow"
+                : resolviendo.g4[0] === "r"
+                ? "red"
+                : resolviendo.g4[0] === "o"
+                ? "orange"
+                : resolviendo.g4[0] === "b"
+                ? "blue"
+                : resolviendo.g4[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.g4}
+          </div>
+          <div
+            className={
+              resolviendo.g1[0] === "w"
+                ? "white"
+                : resolviendo.g1[0] === "y"
+                ? "yellow"
+                : resolviendo.g1[0] === "r"
+                ? "red"
+                : resolviendo.g1[0] === "o"
+                ? "orange"
+                : resolviendo.g1[0] === "b"
+                ? "blue"
+                : resolviendo.g1[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.g1}
+          </div>
+          <div
+            className={
+              resolviendo.g2[0] === "w"
+                ? "white"
+                : resolviendo.g2[0] === "y"
+                ? "yellow"
+                : resolviendo.g2[0] === "r"
+                ? "red"
+                : resolviendo.g2[0] === "o"
+                ? "orange"
+                : resolviendo.g2[0] === "b"
+                ? "blue"
+                : resolviendo.g2[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.g2}
+          </div>
+          <div
+            className={
+              resolviendo.g3[0] === "w"
+                ? "white"
+                : resolviendo.g3[0] === "y"
+                ? "yellow"
+                : resolviendo.g3[0] === "r"
+                ? "red"
+                : resolviendo.g3[0] === "o"
+                ? "orange"
+                : resolviendo.g3[0] === "b"
+                ? "blue"
+                : resolviendo.g3[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.g3}
+          </div>
         </section>
       </div>
-
       <div className="containerCara3">
         {/*//todo section color red */}
         <section className="cara">
-          <div className="red">R9</div>
-          <div className="red">R8</div>
-          <div className="red">R1</div>
-          <div className="red">R2</div>
-          <div className="red">R5</div>
-          <div className="red">R4</div>
-          <div className="red">R3</div>
-          <div className="red">R6</div>
-          <div className="red">R7</div>
+          <div
+            className={
+              resolviendo.r9[0] === "w"
+                ? "white"
+                : resolviendo.r9[0] === "y"
+                ? "yellow"
+                : resolviendo.r9[0] === "r"
+                ? "red"
+                : resolviendo.r9[0] === "o"
+                ? "orange"
+                : resolviendo.r9[0] === "b"
+                ? "blue"
+                : resolviendo.r9[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r9}
+          </div>
+          <div
+            className={
+              resolviendo.r8[0] === "w"
+                ? "white"
+                : resolviendo.r8[0] === "y"
+                ? "yellow"
+                : resolviendo.r8[0] === "r"
+                ? "red"
+                : resolviendo.r8[0] === "o"
+                ? "orange"
+                : resolviendo.r8[0] === "b"
+                ? "blue"
+                : resolviendo.r8[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r8}
+          </div>
+          <div
+            className={
+              resolviendo.r1[0] === "w"
+                ? "white"
+                : resolviendo.r1[0] === "y"
+                ? "yellow"
+                : resolviendo.r1[0] === "r"
+                ? "red"
+                : resolviendo.r1[0] === "o"
+                ? "orange"
+                : resolviendo.r1[0] === "b"
+                ? "blue"
+                : resolviendo.r1[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r1}
+          </div>
+          <div
+            className={
+              resolviendo.r2[0] === "w"
+                ? "white"
+                : resolviendo.r2[0] === "y"
+                ? "yellow"
+                : resolviendo.r2[0] === "r"
+                ? "red"
+                : resolviendo.r2[0] === "o"
+                ? "orange"
+                : resolviendo.r2[0] === "b"
+                ? "blue"
+                : resolviendo.r2[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r2}
+          </div>
+          <div
+            className={
+              resolviendo.r5[0] === "w"
+                ? "white"
+                : resolviendo.r5[0] === "y"
+                ? "yellow"
+                : resolviendo.r5[0] === "r"
+                ? "red"
+                : resolviendo.r5[0] === "o"
+                ? "orange"
+                : resolviendo.r5[0] === "b"
+                ? "blue"
+                : resolviendo.r5[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r5}
+          </div>
+          <div
+            className={
+              resolviendo.r4[0] === "w"
+                ? "white"
+                : resolviendo.r4[0] === "y"
+                ? "yellow"
+                : resolviendo.r4[0] === "r"
+                ? "red"
+                : resolviendo.r4[0] === "o"
+                ? "orange"
+                : resolviendo.r4[0] === "b"
+                ? "blue"
+                : resolviendo.r4[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r4}
+          </div>
+          <div
+            className={
+              resolviendo.r3[0] === "w"
+                ? "white"
+                : resolviendo.r3[0] === "y"
+                ? "yellow"
+                : resolviendo.r3[0] === "r"
+                ? "red"
+                : resolviendo.r3[0] === "o"
+                ? "orange"
+                : resolviendo.r3[0] === "b"
+                ? "blue"
+                : resolviendo.r3[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r3}
+          </div>
+          <div
+            className={
+              resolviendo.r6[0] === "w"
+                ? "white"
+                : resolviendo.r6[0] === "y"
+                ? "yellow"
+                : resolviendo.r6[0] === "r"
+                ? "red"
+                : resolviendo.r6[0] === "o"
+                ? "orange"
+                : resolviendo.r6[0] === "b"
+                ? "blue"
+                : resolviendo.r6[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r6}
+          </div>
+          <div
+            className={
+              resolviendo.r7[0] === "w"
+                ? "white"
+                : resolviendo.r7[0] === "y"
+                ? "yellow"
+                : resolviendo.r7[0] === "r"
+                ? "red"
+                : resolviendo.r7[0] === "o"
+                ? "orange"
+                : resolviendo.r7[0] === "b"
+                ? "blue"
+                : resolviendo.r7[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r7}
+          </div>
         </section>
         {/*//todo section color white */}
         <section className="cara">
-          <div className="white">{white.a}</div>
-          <div className="white">{white.b}</div>
-          <div className="white">{white.c}</div>
-          <div className="white">{white.d}</div>
-          <div className="white">{white.e}</div>
-          <div className="white">{white.f}</div>
-          <div className="white">{white.g}</div>
-          <div className="white">{white.h}</div>
-          <div className="white">{white.i}</div>
+          <div
+            className={
+              resolviendo.w1[0] === "w"
+                ? "white"
+                : resolviendo.w1[0] === "y"
+                ? "yellow"
+                : resolviendo.w1[0] === "r"
+                ? "red"
+                : resolviendo.w1[0] === "o"
+                ? "orange"
+                : resolviendo.w1[0] === "b"
+                ? "blue"
+                : resolviendo.w1[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.w1}
+          </div>
+          <div
+            className={
+              resolviendo.w2[0] === "w"
+                ? "white"
+                : resolviendo.w2[0] === "y"
+                ? "yellow"
+                : resolviendo.w2[0] === "r"
+                ? "red"
+                : resolviendo.w2[0] === "o"
+                ? "orange"
+                : resolviendo.w2[0] === "b"
+                ? "blue"
+                : resolviendo.w2[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.w2}
+          </div>
+          <div
+            className={
+              resolviendo.w3[0] === "w"
+                ? "white"
+                : resolviendo.w3[0] === "y"
+                ? "yellow"
+                : resolviendo.w3[0] === "r"
+                ? "red"
+                : resolviendo.w3[0] === "o"
+                ? "orange"
+                : resolviendo.w3[0] === "b"
+                ? "blue"
+                : resolviendo.w3[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.w3}
+          </div>
+          <div
+            className={
+              resolviendo.w4[0] === "w"
+                ? "white"
+                : resolviendo.w4[0] === "y"
+                ? "yellow"
+                : resolviendo.w4[0] === "r"
+                ? "red"
+                : resolviendo.w4[0] === "o"
+                ? "orange"
+                : resolviendo.w4[0] === "b"
+                ? "blue"
+                : resolviendo.w4[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.w4}
+          </div>
+          <div
+            className={
+              resolviendo.w5[0] === "w"
+                ? "white"
+                : resolviendo.w5[0] === "y"
+                ? "yellow"
+                : resolviendo.w5[0] === "r"
+                ? "red"
+                : resolviendo.w5[0] === "o"
+                ? "orange"
+                : resolviendo.w5[0] === "b"
+                ? "blue"
+                : resolviendo.w5[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.w5}
+          </div>
+          <div
+            className={
+              resolviendo.w6[0] === "w"
+                ? "white"
+                : resolviendo.w6[0] === "y"
+                ? "yellow"
+                : resolviendo.w6[0] === "r"
+                ? "red"
+                : resolviendo.w6[0] === "o"
+                ? "orange"
+                : resolviendo.w6[0] === "b"
+                ? "blue"
+                : resolviendo.w6[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.w6}
+          </div>
+          <div
+            className={
+              resolviendo.w7[0] === "w"
+                ? "white"
+                : resolviendo.w7[0] === "y"
+                ? "yellow"
+                : resolviendo.w7[0] === "r"
+                ? "red"
+                : resolviendo.w7[0] === "o"
+                ? "orange"
+                : resolviendo.w7[0] === "b"
+                ? "blue"
+                : resolviendo.w7[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.w7}
+          </div>
+          <div
+            className={
+              resolviendo.w8[0] === "w"
+                ? "white"
+                : resolviendo.w8[0] === "y"
+                ? "yellow"
+                : resolviendo.w8[0] === "r"
+                ? "red"
+                : resolviendo.w8[0] === "o"
+                ? "orange"
+                : resolviendo.w8[0] === "b"
+                ? "blue"
+                : resolviendo.w8[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.w8}
+          </div>
+          <div
+            className={
+              resolviendo.w9[0] === "w"
+                ? "white"
+                : resolviendo.w9[0] === "y"
+                ? "yellow"
+                : resolviendo.w9[0] === "r"
+                ? "red"
+                : resolviendo.w9[0] === "o"
+                ? "orange"
+                : resolviendo.w9[0] === "b"
+                ? "blue"
+                : resolviendo.w9[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.w9}
+          </div>
         </section>
         {/*//todo section color orange */}
         <section className="cara">
-          <div className="orange">O3</div>
-          <div className="orange">O4</div>
-          <div className="orange">O7</div>
-          <div className="orange">O6</div>
-          <div className="orange">O5</div>
-          <div className="orange">O8</div>
-          <div className="orange">O9</div>
-          <div className="orange">O2</div>
-          <div className="orange">O1</div>
+          <div
+            className={
+              resolviendo.o3[0] === "w"
+                ? "white"
+                : resolviendo.o3[0] === "y"
+                ? "yellow"
+                : resolviendo.o3[0] === "r"
+                ? "red"
+                : resolviendo.o3[0] === "o"
+                ? "orange"
+                : resolviendo.o3[0] === "b"
+                ? "blue"
+                : resolviendo.o3[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o3}
+          </div>
+          <div
+            className={
+              resolviendo.o4[0] === "w"
+                ? "white"
+                : resolviendo.o4[0] === "y"
+                ? "yellow"
+                : resolviendo.o4[0] === "r"
+                ? "red"
+                : resolviendo.o4[0] === "o"
+                ? "orange"
+                : resolviendo.o4[0] === "b"
+                ? "blue"
+                : resolviendo.o4[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o4}
+          </div>
+          <div
+            className={
+              resolviendo.o7[0] === "w"
+                ? "white"
+                : resolviendo.o7[0] === "y"
+                ? "yellow"
+                : resolviendo.o7[0] === "r"
+                ? "red"
+                : resolviendo.o7[0] === "o"
+                ? "orange"
+                : resolviendo.o7[0] === "b"
+                ? "blue"
+                : resolviendo.o7[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o7}
+          </div>
+          <div
+            className={
+              resolviendo.o6[0] === "w"
+                ? "white"
+                : resolviendo.o6[0] === "y"
+                ? "yellow"
+                : resolviendo.o6[0] === "r"
+                ? "red"
+                : resolviendo.o6[0] === "o"
+                ? "orange"
+                : resolviendo.o6[0] === "b"
+                ? "blue"
+                : resolviendo.o6[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o6}
+          </div>
+          <div
+            className={
+              resolviendo.o5[0] === "w"
+                ? "white"
+                : resolviendo.o5[0] === "y"
+                ? "yellow"
+                : resolviendo.o5[0] === "r"
+                ? "red"
+                : resolviendo.o5[0] === "o"
+                ? "orange"
+                : resolviendo.o5[0] === "b"
+                ? "blue"
+                : resolviendo.o5[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o5}
+          </div>
+          <div
+            className={
+              resolviendo.o8[0] === "w"
+                ? "white"
+                : resolviendo.o8[0] === "y"
+                ? "yellow"
+                : resolviendo.o8[0] === "r"
+                ? "red"
+                : resolviendo.o8[0] === "o"
+                ? "orange"
+                : resolviendo.o8[0] === "b"
+                ? "blue"
+                : resolviendo.o8[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o8}
+          </div>
+          <div
+            className={
+              resolviendo.o9[0] === "w"
+                ? "white"
+                : resolviendo.o9[0] === "y"
+                ? "yellow"
+                : resolviendo.o9[0] === "r"
+                ? "red"
+                : resolviendo.o9[0] === "o"
+                ? "orange"
+                : resolviendo.o9[0] === "b"
+                ? "blue"
+                : resolviendo.o9[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o9}
+          </div>
+          <div
+            className={
+              resolviendo.o2[0] === "w"
+                ? "white"
+                : resolviendo.o2[0] === "y"
+                ? "yellow"
+                : resolviendo.o2[0] === "r"
+                ? "red"
+                : resolviendo.o2[0] === "o"
+                ? "orange"
+                : resolviendo.o2[0] === "b"
+                ? "blue"
+                : resolviendo.o2[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o2}
+          </div>
+          <div
+            className={
+              resolviendo.o1[0] === "w"
+                ? "white"
+                : resolviendo.o1[0] === "y"
+                ? "yellow"
+                : resolviendo.o1[0] === "r"
+                ? "red"
+                : resolviendo.o1[0] === "o"
+                ? "orange"
+                : resolviendo.o1[0] === "b"
+                ? "blue"
+                : resolviendo.o1[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o1}
+          </div>
         </section>
       </div>
-
       <div className="containerCara">
         {/*//todo section color blue */}
         <section className="cara">
-          <div className="blue">B7</div>
-          <div className="blue">B8</div>
-          <div className="blue">B9</div>
-          <div className="blue">B6</div>
-          <div className="blue">B5</div>
-          <div className="blue">B2</div>
-          <div className="blue">B3</div>
-          <div className="blue">B4</div>
-          <div className="blue">B1</div>
+          <div
+            className={
+              resolviendo.b7[0] === "w"
+                ? "white"
+                : resolviendo.b7[0] === "y"
+                ? "yellow"
+                : resolviendo.b7[0] === "r"
+                ? "red"
+                : resolviendo.b7[0] === "o"
+                ? "orange"
+                : resolviendo.b7[0] === "b"
+                ? "blue"
+                : resolviendo.b7[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.b7}
+          </div>
+          <div
+            className={
+              resolviendo.b8[0] === "w"
+                ? "white"
+                : resolviendo.b8[0] === "y"
+                ? "yellow"
+                : resolviendo.b8[0] === "r"
+                ? "red"
+                : resolviendo.b8[0] === "o"
+                ? "orange"
+                : resolviendo.b8[0] === "b"
+                ? "blue"
+                : resolviendo.b8[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.b8}
+          </div>
+          <div
+            className={
+              resolviendo.b9[0] === "w"
+                ? "white"
+                : resolviendo.b9[0] === "y"
+                ? "yellow"
+                : resolviendo.b9[0] === "r"
+                ? "red"
+                : resolviendo.b9[0] === "o"
+                ? "orange"
+                : resolviendo.b9[0] === "b"
+                ? "blue"
+                : resolviendo.b9[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.b9}
+          </div>
+          <div
+            className={
+              resolviendo.b6[0] === "w"
+                ? "white"
+                : resolviendo.b6[0] === "y"
+                ? "yellow"
+                : resolviendo.b6[0] === "r"
+                ? "red"
+                : resolviendo.b6[0] === "o"
+                ? "orange"
+                : resolviendo.b6[0] === "b"
+                ? "blue"
+                : resolviendo.b6[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.b6}
+          </div>
+          <div
+            className={
+              resolviendo.b5[0] === "w"
+                ? "white"
+                : resolviendo.b5[0] === "y"
+                ? "yellow"
+                : resolviendo.b5[0] === "r"
+                ? "red"
+                : resolviendo.b5[0] === "o"
+                ? "orange"
+                : resolviendo.b5[0] === "b"
+                ? "blue"
+                : resolviendo.b5[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.b5}
+          </div>
+          <div
+            className={
+              resolviendo.b2[0] === "w"
+                ? "white"
+                : resolviendo.b2[0] === "y"
+                ? "yellow"
+                : resolviendo.b2[0] === "r"
+                ? "red"
+                : resolviendo.b2[0] === "o"
+                ? "orange"
+                : resolviendo.b2[0] === "b"
+                ? "blue"
+                : resolviendo.b2[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.b2}
+          </div>
+          <div
+            className={
+              resolviendo.b3[0] === "w"
+                ? "white"
+                : resolviendo.b3[0] === "y"
+                ? "yellow"
+                : resolviendo.b3[0] === "r"
+                ? "red"
+                : resolviendo.b3[0] === "o"
+                ? "orange"
+                : resolviendo.b3[0] === "b"
+                ? "blue"
+                : resolviendo.b3[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.b3}
+          </div>
+          <div
+            className={
+              resolviendo.b4[0] === "w"
+                ? "white"
+                : resolviendo.b4[0] === "y"
+                ? "yellow"
+                : resolviendo.b4[0] === "r"
+                ? "red"
+                : resolviendo.b4[0] === "o"
+                ? "orange"
+                : resolviendo.b4[0] === "b"
+                ? "blue"
+                : resolviendo.b4[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.b4}
+          </div>
+          <div
+            className={
+              resolviendo.b1[0] === "w"
+                ? "white"
+                : resolviendo.b1[0] === "y"
+                ? "yellow"
+                : resolviendo.b1[0] === "r"
+                ? "red"
+                : resolviendo.b1[0] === "o"
+                ? "orange"
+                : resolviendo.b1[0] === "b"
+                ? "blue"
+                : resolviendo.b1[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.b1}
+          </div>
         </section>
       </div>
-
       <div className="containerCara">
         {/*//todo section color yellow */}
         <section className="cara">
-          <div className="yellow">Y9</div>
-          <div className="yellow">Y6</div>
-          <div className="yellow">Y7</div>
-          <div className="yellow">Y2</div>
-          <div className="yellow">Y5</div>
-          <div className="yellow">Y8</div>
-          <div className="yellow">Y3</div>
-          <div className="yellow">Y4</div>
-          <div className="yellow">Y1</div>
+          <div
+            className={
+              resolviendo.y9[0] === "w"
+                ? "white"
+                : resolviendo.y9[0] === "y"
+                ? "yellow"
+                : resolviendo.y9[0] === "r"
+                ? "red"
+                : resolviendo.y9[0] === "o"
+                ? "orange"
+                : resolviendo.y9[0] === "b"
+                ? "blue"
+                : resolviendo.y9[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.y9}
+          </div>
+          <div
+            className={
+              resolviendo.y6[0] === "w"
+                ? "white"
+                : resolviendo.y6[0] === "y"
+                ? "yellow"
+                : resolviendo.y6[0] === "r"
+                ? "red"
+                : resolviendo.y6[0] === "o"
+                ? "orange"
+                : resolviendo.y6[0] === "b"
+                ? "blue"
+                : resolviendo.y6[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.y6}
+          </div>
+          <div
+            className={
+              resolviendo.y7[0] === "w"
+                ? "white"
+                : resolviendo.y7[0] === "y"
+                ? "yellow"
+                : resolviendo.y7[0] === "r"
+                ? "red"
+                : resolviendo.y7[0] === "o"
+                ? "orange"
+                : resolviendo.y7[0] === "b"
+                ? "blue"
+                : resolviendo.y7[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.y7}
+          </div>
+          <div
+            className={
+              resolviendo.y2[0] === "w"
+                ? "white"
+                : resolviendo.y2[0] === "y"
+                ? "yellow"
+                : resolviendo.y2[0] === "r"
+                ? "red"
+                : resolviendo.y2[0] === "o"
+                ? "orange"
+                : resolviendo.y2[0] === "b"
+                ? "blue"
+                : resolviendo.y2[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.y2}
+          </div>
+          <div
+            className={
+              resolviendo.y5[0] === "w"
+                ? "white"
+                : resolviendo.y5[0] === "y"
+                ? "yellow"
+                : resolviendo.y5[0] === "r"
+                ? "red"
+                : resolviendo.y5[0] === "o"
+                ? "orange"
+                : resolviendo.y5[0] === "b"
+                ? "blue"
+                : resolviendo.y5[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.y5}
+          </div>
+          <div
+            className={
+              resolviendo.y8[0] === "w"
+                ? "white"
+                : resolviendo.y8[0] === "y"
+                ? "yellow"
+                : resolviendo.y8[0] === "r"
+                ? "red"
+                : resolviendo.y8[0] === "o"
+                ? "orange"
+                : resolviendo.y8[0] === "b"
+                ? "blue"
+                : resolviendo.y8[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.y8}
+          </div>
+          <div
+            className={
+              resolviendo.y3[0] === "w"
+                ? "white"
+                : resolviendo.y3[0] === "y"
+                ? "yellow"
+                : resolviendo.y3[0] === "r"
+                ? "red"
+                : resolviendo.y3[0] === "o"
+                ? "orange"
+                : resolviendo.y3[0] === "b"
+                ? "blue"
+                : resolviendo.y3[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.y3}
+          </div>
+          <div
+            className={
+              resolviendo.y4[0] === "w"
+                ? "white"
+                : resolviendo.y4[0] === "y"
+                ? "yellow"
+                : resolviendo.y4[0] === "r"
+                ? "red"
+                : resolviendo.y4[0] === "o"
+                ? "orange"
+                : resolviendo.y4[0] === "b"
+                ? "blue"
+                : resolviendo.y4[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.y4}
+          </div>
+          <div
+            className={
+              resolviendo.y1[0] === "w"
+                ? "white"
+                : resolviendo.y1[0] === "y"
+                ? "yellow"
+                : resolviendo.y1[0] === "r"
+                ? "red"
+                : resolviendo.y1[0] === "o"
+                ? "orange"
+                : resolviendo.y1[0] === "b"
+                ? "blue"
+                : resolviendo.y1[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.y1}
+          </div>
         </section>
       </div>
     </div>
