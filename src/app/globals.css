@@ -15,28 +15,43 @@ body {
 .containerCara3 {
   @apply flex grid-cols-3 justify-center items-center;
 }
-.cara {
-  @apply grid grid-cols-3 w-40 border-4 border-black m-2 text-center text-black bg-gray-900;
+.caraWhite {
+  @apply grid grid-cols-3   w-40 text-center text-black;
+}
+.caraYellow {
+  @apply grid grid-cols-5 w-72 m-10 text-center text-black;
+}
+.caraRed {
+  @apply grid grid-cols-3 w-40   text-center text-black;
+}
+.caraOrange {
+  @apply grid grid-cols-3 w-40   text-center text-black;
+}
+.caraGreen {
+  @apply grid grid-cols-3 w-40   text-center text-black;
+}
+.caraBlue {
+  @apply grid grid-cols-3 w-40   text-center text-black;
 }
 
 .white {
-  @apply bg-white border-4 border-black w-10 h-10 m-1 uppercase;
+  @apply bg-white border-b-2 border-r-2 border-black h-10  uppercase;
 }
 .yellow {
-  @apply bg-yellow-500 border-4 border-black w-10 h-10 m-1 uppercase;
+  @apply bg-yellow-500 border-b-2 border-r-2 border-black h-10  uppercase;
 }
 .red {
-  @apply bg-red-500 border-4 border-black w-10 h-10 m-1 uppercase;
+  @apply bg-red-500 border-b-2 border-r-2 border-black h-10  uppercase;
 }
 .orange {
-  @apply bg-orange-500 border-4 border-black w-10 h-10 m-1 uppercase;
+  @apply bg-orange-500 border-b-2 border-r-2 border-black h-10  uppercase;
 }
 .green {
-  @apply bg-green-500 border-4 border-black w-10 h-10 m-1 uppercase;
+  @apply bg-green-500 border-b-2 border-r-2 border-black h-10  uppercase;
 }
 .blue {
-  @apply bg-blue-500 border-4 border-black w-10 h-10 m-1 uppercase;
+  @apply bg-blue-500 border-b-2 border-r-2 border-black h-10 uppercase;
 }
 .noColor{
-  @apply bg-gray-500 border-4 border-black w-10 h-10 m-1 uppercase;
+  @apply bg-gray-500 border-b-2 border-r-2 border-black h-10  uppercase;
 }
