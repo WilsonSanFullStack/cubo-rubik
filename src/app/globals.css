@@ -35,22 +35,22 @@ body {
 }
 
 .white {
-  @apply bg-white border-b-2 border-r-2 border-black h-10  uppercase;
+  @apply bg-white border-b-2 border-r-2 border-black h-10 text-white uppercase;
 }
 .yellow {
-  @apply bg-yellow-500 border-b-2 border-r-2 border-black h-10  uppercase;
+  @apply bg-yellow-500 border-b-2 border-r-2 border-black h-10 text-yellow-500 uppercase;
 }
 .red {
-  @apply bg-red-500 border-b-2 border-r-2 border-black h-10  uppercase;
+  @apply bg-red-500 border-b-2 border-r-2 border-black h-10 text-red-500 uppercase;
 }
 .orange {
-  @apply bg-orange-500 border-b-2 border-r-2 border-black h-10  uppercase;
+  @apply bg-orange-500 border-b-2 border-r-2 border-black h-10 text-orange-500 uppercase;
 }
 .green {
-  @apply bg-green-500 border-b-2 border-r-2 border-black h-10  uppercase;
+  @apply bg-green-500 border-b-2 border-r-2 border-black h-10 text-green-500 uppercase;
 }
 .blue {
-  @apply bg-blue-500 border-b-2 border-r-2 border-black h-10 uppercase;
+  @apply bg-blue-500 border-b-2 border-r-2 border-black h-10 text-blue-500 uppercase;
 }
 .noColor{
   @apply bg-gray-500 border-b-2 border-r-2 border-black h-10  uppercase;

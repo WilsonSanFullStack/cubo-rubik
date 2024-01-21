@@ -146,6 +146,7 @@ const CuboRubik = () => {
   }
   const cantidadCoincidencias = contarIguales(resuelto, resolviendo);
   const a: Resolviendo = resolviendo;
+
   function rotacionU() {
     setResolviendo({
       ...resolviendo,
@@ -171,7 +172,6 @@ const CuboRubik = () => {
       o9: a.g3,
     });
   }
-
   function rotacionUp() {
     setResolviendo({
       ...resolviendo,
@@ -197,6 +197,7 @@ const CuboRubik = () => {
       o9: a.b7,
     });
   }
+
   function rotacionD() {
     setResolviendo({
       ...resolviendo,
@@ -222,7 +223,6 @@ const CuboRubik = () => {
       o7: a.b1,
     });
   }
-
   function rotacionDp() {
     setResolviendo({
       ...resolviendo,
@@ -248,6 +248,7 @@ const CuboRubik = () => {
       o7: a.g9,
     });
   }
+
   function rotacionL() {
     setResolviendo({
       ...resolviendo,
@@ -257,9 +258,9 @@ const CuboRubik = () => {
       r1: a.r7,
       r4: a.r6,
       r7: a.r3,
-      b7: a.y9,
+      b7: a.y3,
       b6: a.y2,
-      b3: a.y3,
+      b3: a.y9,
       r6: a.r2,
       r3: a.r9,
       g9: a.w1,
@@ -273,33 +274,185 @@ const CuboRubik = () => {
       r2: a.r8,
     });
   }
-
   function rotacionLp() {
     setResolviendo({
       ...resolviendo,
-      y1: a.y7,
-      y2: a.y4,
-      y3: a.y1,
-      y4: a.y8,
-      y6: a.y2,
-      y7: a.y9,
-      y8: a.y6,
-      y9: a.y3,
-      b3: a.o1,
-      b4: a.o8,
-      b1: a.o7,
-      g9: a.r3,
-      g6: a.r2,
-      g7: a.r9,
-      r9: a.b3,
-      r2: a.b4,
-      r3: a.b1,
-      o1: a.g7,
-      o8: a.g6,
-      o7: a.g9,
+      w1: a.g9,
+      w4: a.g8,
+      w7: a.g1,
+      r1: a.r9,
+      r4: a.r8,
+      r7: a.r1,
+      b7: a.w1,
+      b6: a.w4,
+      b3: a.w7,
+      r6: a.r4,
+      r3: a.r7,
+      g9: a.y3,
+      g8: a.y2,
+      g1: a.y9,
+      r8: a.r2,
+      r9: a.r3,
+      y9: a.b3,
+      y2: a.b6,
+      y3: a.b7,
+      r2: a.r6,
+    });
+  }
+//! error en L se traslapan las equinas de g9 y g1 
+//* resuelto el error anterior
+  function rotacionR() {
+    setResolviendo({
+      ...resolviendo,
+      w3: a.g7,
+      w6: a.g4,
+      w9: a.g3,
+      o3: a.o7,
+      o6: a.o4,
+      o9: a.o3,
+      b9: a.w3,
+      b2: a.w6,
+      b1: a.w9,
+      o2: a.o6,
+      o1: a.o9,
+      g7: a.y1,
+      g4: a.y8,
+      g3: a.y7,
+      o8: a.o2,
+      o7: a.o1,
+      y1: a.b9,
+      y8: a.b2,
+      y7: a.b1,
+      o4: a.o8,
+    });
+  }
+  function rotacionRp() {
+    setResolviendo({
+      ...resolviendo,
+      w3: a.g7,
+      w6: a.g4,
+      w9: a.g3,
+      o3: a.o7,
+      o6: a.o4,
+      o9: a.o3,
+      b9: a.w3,
+      b2: a.w6,
+      b1: a.w9,
+      o2: a.o6,
+      o1: a.o9,
+      g7: a.y1,
+      g4: a.y8,
+      g3: a.y7,
+      o8: a.o2,
+      o7: a.o1,
+      y1: a.b9,
+      y8: a.b2,
+      y7: a.b1,
+      o4: a.o8,
     });
   }
 
+  function rotacionF() {
+    setResolviendo({
+      ...resolviendo,
+      w3: a.o7,
+      w2: a.o4,
+      w1: a.o3,
+      g1: a.g3,
+      g2: a.g4,
+      g3: a.g7,
+      o3: a.y7,
+      o4: a.y6,
+      o7: a.y9,
+      g4: a.g6,
+      g7: a.g9,
+      y7: a.r9,
+      y6: a.r8,
+      y9: a.r1,
+      g6: a.g8,
+      g9: a.g1,
+      r9: a.w1,
+      r8: a.w2,
+      r1: a.w3,
+      g8: a.g2,
+    });
+  }
+  function rotacionFp() {
+    setResolviendo({
+      ...resolviendo,
+      w3: a.r1,
+      w2: a.r8,
+      w1: a.r9,
+      g1: a.g9,
+      g2: a.g8,
+      g3: a.g1,
+      o3: a.w1,
+      o4: a.w2,
+      o7: a.w3,
+      g4: a.g2,
+      g7: a.g3,
+      y7: a.o3,
+      y6: a.o4,
+      y9: a.o7,
+      g6: a.g4,
+      g9: a.g7,
+      r9: a.y7,
+      r8: a.y6,
+      r1: a.y9,
+      g8: a.g6,
+    });
+  }
+
+  function rotacionB() {
+    setResolviendo({
+      ...resolviendo,
+      w9: a.r7,
+      w8: a.r6,
+      w7: a.r3,
+      b7: a.b3,
+      b8: a.b6,
+      b9: a.b7,
+      o9: a.w7,
+      o2: a.w8,
+      o1: a.w9,
+      b2: a.b8,
+      b1: a.b9,
+      y1: a.o9,
+      y4: a.o2,
+      y3: a.o1,
+      b4: a.b2,
+      b3: a.b1,
+      r3: a.y1,
+      r6: a.y4,
+      r7: a.y3,
+      b6: a.b4,
+    });
+  }
+  function rotacionBp() {
+    setResolviendo({
+      ...resolviendo,
+      w9: a.o1,
+      w8: a.o2,
+      w7: a.o9,
+      b7: a.b9,
+      b8: a.b2,
+      b9: a.b1,
+      o9: a.y1,
+      o2: a.y4,
+      o1: a.y3,
+      b2: a.b4,
+      b1: a.b3,
+      y1: a.r3,
+      y4: a.r6,
+      y3: a.r7,
+      b4: a.b6,
+      b3: a.b7,
+      r3: a.w7,
+      r6: a.w8,
+      r7: a.w9,
+      b6: a.b8,
+    });
+  }
   return (
     <div className="w-2/5 m-4  justify-center items-center">
       <h1>Hay </h1>
@@ -353,13 +506,13 @@ const CuboRubik = () => {
 
         <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
           <button
-            onClick={rotacionU}
+            onClick={rotacionR}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
           >
             R <TiArrowUpThick className="m-auto" />
           </button>
           <button
-            onClick={rotacionUp}
+            onClick={rotacionRp}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
           >
             R` <TiArrowDownThick className="m-auto" />
@@ -368,13 +521,13 @@ const CuboRubik = () => {
 
         <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
           <button
-            onClick={rotacionU}
+            onClick={rotacionF}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
           >
             F <TiArrowLeftThick className="m-auto" />
           </button>
           <button
-            onClick={rotacionUp}
+            onClick={rotacionFp}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
           >
             F` <TiArrowRightThick className="m-auto" />
@@ -383,13 +536,13 @@ const CuboRubik = () => {
 
         <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
           <button
-            onClick={rotacionU}
+            onClick={rotacionB}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
           >
             B <TiArrowLeftThick className="m-auto" />
           </button>
           <button
-            onClick={rotacionUp}
+            onClick={rotacionBp}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
           >
             B` <TiArrowRightThick className="m-auto" />
@@ -461,7 +614,7 @@ const CuboRubik = () => {
               resolviendo.g8[0] === "w"
                 ? "white border-l-2 border-black"
                 : resolviendo.g8[0] === "y"
-                ? "yellow"
+                ? "yellow border-l-2 border-black"
                 : resolviendo.g8[0] === "r"
                 ? "red border-l-2 border-black"
                 : resolviendo.g8[0] === "o"
@@ -1275,7 +1428,6 @@ const CuboRubik = () => {
       <div className="containerCara">
         {/*//todo section color yellow */}
         <section className="caraYellow">
-
           <div></div>
           <div
             className={
