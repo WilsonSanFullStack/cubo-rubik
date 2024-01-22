@@ -16,42 +16,42 @@ body {
   @apply flex grid-cols-3 justify-center items-center;
 }
 .caraWhite {
-  @apply grid grid-cols-3   w-40 text-center text-black;
+  @apply grid grid-cols-3 border-2 border-black  w-40 text-center text-black;
 }
 .caraYellow {
   @apply grid grid-cols-5 w-72 m-10 text-center text-black;
 }
 .caraRed {
-  @apply grid grid-cols-3 w-40   text-center text-black;
+  @apply grid grid-cols-3 w-40 m-1 border-2 border-black  text-center text-black;
 }
 .caraOrange {
-  @apply grid grid-cols-3 w-40   text-center text-black;
+  @apply grid grid-cols-3 w-40 m-1 border-2 border-black  text-center text-black;
 }
 .caraGreen {
-  @apply grid grid-cols-3 w-40   text-center text-black;
+  @apply grid grid-cols-3 w-40 m-1 border-2 border-black  text-center text-black;
 }
 .caraBlue {
-  @apply grid grid-cols-3 w-40   text-center text-black;
+  @apply grid grid-cols-3 w-40 m-1 border-2 border-black  text-center text-black;
 }
 
 .white {
-  @apply bg-white border-b-2 border-r-2 border-black h-10 text-white uppercase;
+  @apply bg-white border-2  border-black h-10  uppercase;
 }
 .yellow {
-  @apply bg-yellow-500 border-b-2 border-r-2 border-black h-10 text-yellow-500 uppercase;
+  @apply bg-yellow-500 border-2  border-black h-10  uppercase;
 }
 .red {
-  @apply bg-red-500 border-b-2 border-r-2 border-black h-10 text-red-500 uppercase;
+  @apply bg-red-500 border-2  border-black h-10  uppercase;
 }
 .orange {
-  @apply bg-orange-500 border-b-2 border-r-2 border-black h-10 text-orange-500 uppercase;
+  @apply bg-orange-500 border-2  border-black h-10  uppercase;
 }
 .green {
-  @apply bg-green-500 border-b-2 border-r-2 border-black h-10 text-green-500 uppercase;
+  @apply bg-green-500 border-2  border-black h-10  uppercase;
 }
 .blue {
-  @apply bg-blue-500 border-b-2 border-r-2 border-black h-10 text-blue-500 uppercase;
+  @apply bg-blue-500 border-2  border-black h-10  uppercase;
 }
 .noColor{
-  @apply bg-gray-500 border-b-2 border-r-2 border-black h-10  uppercase;
+  @apply bg-gray-500 border-2  border-black h-10  uppercase;
 }

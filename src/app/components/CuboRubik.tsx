@@ -146,55 +146,54 @@ const CuboRubik = () => {
   }
   const cantidadCoincidencias = contarIguales(resuelto, resolviendo);
   const a: Resolviendo = resolviendo;
-
   function rotacionU() {
     setResolviendo({
       ...resolviendo,
       w1: a.w7,
-      r1: a.b7,
-      g1: a.r7,
       w2: a.w4,
-      g2: a.r4,
       w3: a.w1,
-      g3: a.r1,
-      o3: a.g1,
       w4: a.w8,
-      r4: a.b8,
       w6: a.w2,
-      o6: a.g2,
       w7: a.w9,
-      b7: a.o9,
-      r7: a.b9,
       w8: a.w6,
-      b8: a.o6,
       w9: a.w3,
-      b9: a.o3,
-      o9: a.g3,
+      g1: a.o7,
+      g2: a.o4,
+      g3: a.o1,
+      b7: a.r9,
+      b8: a.r6,
+      b9: a.r3,
+      r3: a.g1,
+      r6: a.g2,
+      r9: a.g3,
+      o1: a.b7,
+      o4: a.b8,
+      o7: a.b9,
     });
   }
   function rotacionUp() {
     setResolviendo({
       ...resolviendo,
       w1: a.w3,
-      r1: a.g3,
-      g1: a.o3,
       w2: a.w6,
-      g2: a.o6,
       w3: a.w9,
-      g3: a.o9,
-      o3: a.b9,
       w4: a.w2,
-      r4: a.g2,
       w6: a.w8,
-      o6: a.b8,
       w7: a.w1,
-      b7: a.r1,
-      r7: a.g1,
       w8: a.w4,
-      b8: a.r4,
       w9: a.w7,
-      b9: a.r7,
-      o9: a.b7,
+      g1: a.r3,
+      g2: a.r6,
+      g3: a.r9,
+      b7: a.o1,
+      b8: a.o4,
+      b9: a.o7,
+      r3: a.b9,
+      r6: a.b8,
+      r9: a.b7,
+      o1: a.g3,
+      o4: a.g2,
+      o7: a.g1,
     });
   }
 
@@ -209,18 +208,18 @@ const CuboRubik = () => {
       y7: a.y1,
       y8: a.y4,
       y9: a.y7,
-      b3: a.r9,
-      b1: a.r3,
-      b4: a.r2,
-      g9: a.o7,
-      g6: a.o8,
-      g7: a.o1,
-      r9: a.g7,
-      r2: a.g6,
-      r3: a.g9,
-      o1: a.b3,
-      o8: a.b4,
-      o7: a.b1,
+      b3: a.o9,
+      b4: a.o2,
+      b1: a.o3,
+      g9: a.r7,
+      g6: a.r8,
+      g7: a.r1,
+      r1: a.b3,
+      r8: a.b4,
+      r7: a.b1,
+      o3: a.g9,
+      o2: a.g6,
+      o9: a.g7,
     });
   }
   function rotacionDp() {
@@ -234,96 +233,95 @@ const CuboRubik = () => {
       y7: a.y9,
       y8: a.y6,
       y9: a.y3,
-      b3: a.o1,
-      b4: a.o8,
-      b1: a.o7,
-      g9: a.r3,
-      g6: a.r2,
-      g7: a.r9,
-      r9: a.b3,
-      r2: a.b4,
-      r3: a.b1,
-      o1: a.g7,
-      o8: a.g6,
-      o7: a.g9,
+      b3: a.r1,
+      b4: a.r8,
+      b1: a.r7,
+      g9: a.o3,
+      g6: a.o2,
+      g7: a.o9,
+      r7: a.g9,
+      r8: a.g6,
+      r1: a.g7,
+      o3: a.b1,
+      o2: a.b4,
+      o9: a.b3,
     });
   }
 
   function rotacionL() {
     setResolviendo({
       ...resolviendo,
-      w1: a.b7,
-      w4: a.b6,
-      w7: a.b3,
-      r1: a.r7,
-      r4: a.r6,
-      r7: a.r3,
-      b7: a.y3,
-      b6: a.y2,
-      b3: a.y9,
-      r6: a.r2,
-      r3: a.r9,
-      g9: a.w1,
-      g8: a.w4,
-      g1: a.w7,
-      r8: a.r4,
-      r9: a.r1,
-      y9: a.g1,
-      y2: a.g8,
-      y3: a.g9,
-      r2: a.r8,
+      w1: a.g9,
+      w4: a.g8,
+      w7: a.g1,
+      o1: a.o9,
+      o2: a.o6,
+      o3: a.o7,
+      o4: a.o8,
+      o6: a.o4,
+      o7: a.o1,
+      o8: a.o2,
+      o9: a.o3,
+      b3: a.w7,
+      b6: a.w4,
+      b7: a.w1,
+      g1: a.y9,
+      g8: a.y2,
+      g9: a.y3,
+      y3: a.b7,
+      y2: a.b6,
+      y9: a.b3,
     });
   }
   function rotacionLp() {
     setResolviendo({
       ...resolviendo,
-      w1: a.g9,
-      w4: a.g8,
-      w7: a.g1,
-      r1: a.r9,
-      r4: a.r8,
-      r7: a.r1,
-      b7: a.w1,
-      b6: a.w4,
-      b3: a.w7,
-      r6: a.r4,
-      r3: a.r7,
-      g9: a.y3,
-      g8: a.y2,
-      g1: a.y9,
-      r8: a.r2,
-      r9: a.r3,
-      y9: a.b3,
-      y2: a.b6,
-      y3: a.b7,
-      r2: a.r6,
+      w1: a.b7,
+      w4: a.b6,
+      w7: a.b3,
+      o1: a.o7,
+      o2: a.o8,
+      o3: a.o9,
+      o4: a.o6,
+      o6: a.o2,
+      o7: a.o3,
+      o8: a.o4,
+      o9: a.o1,
+      b3: a.y9,
+      b6: a.y2,
+      b7: a.y3,
+      g1: a.w7,
+      g8: a.w4,
+      g9: a.w1,
+      y2: a.g8,
+      y3: a.g9,
+      y9: a.g1,
     });
   }
-//! error en L se traslapan las equinas de g9 y g1 
-//* resuelto el error anterior
+
   function rotacionR() {
     setResolviendo({
       ...resolviendo,
-      w3: a.g7,
-      w6: a.g4,
-      w9: a.g3,
-      o3: a.o7,
-      o6: a.o4,
-      o9: a.o3,
-      b9: a.w3,
-      b2: a.w6,
-      b1: a.w9,
-      o2: a.o6,
-      o1: a.o9,
-      g7: a.y1,
-      g4: a.y8,
-      g3: a.y7,
-      o8: a.o2,
-      o7: a.o1,
-      y1: a.b9,
-      y8: a.b2,
-      y7: a.b1,
-      o4: a.o8,
+      w3: a.b9,
+      w6: a.b2,
+      w9: a.b1,
+      r1: a.r7,
+      r2: a.r8,
+      r3: a.r9,
+      r4: a.r6,
+      r6: a.r2,
+      r7: a.r3,
+      r8: a.r4,
+      r9: a.r1,
+      b1: a.y7,
+      b2: a.y8,
+      b9: a.y1,
+      y1: a.g7,
+      y7: a.g3,
+      y8: a.g4,
+      g3: a.w9,
+      g4: a.w6,
+      g7: a.w3,
     });
   }
   function rotacionRp() {
@@ -332,125 +330,125 @@ const CuboRubik = () => {
       w3: a.g7,
       w6: a.g4,
       w9: a.g3,
-      o3: a.o7,
-      o6: a.o4,
-      o9: a.o3,
-      b9: a.w3,
-      b2: a.w6,
+      r1: a.r9,
+      r2: a.r6,
+      r3: a.r7,
+      r4: a.r8,
+      r6: a.r4,
+      r7: a.r1,
+      r8: a.r2,
+      r9: a.r3,
       b1: a.w9,
-      o2: a.o6,
-      o1: a.o9,
-      g7: a.y1,
-      g4: a.y8,
-      g3: a.y7,
-      o8: a.o2,
-      o7: a.o1,
+      b2: a.w6,
+      b9: a.w3,
       y1: a.b9,
-      y8: a.b2,
       y7: a.b1,
-      o4: a.o8,
+      y8: a.b2,
+      g3: a.y7,
+      g4: a.y8,
+      g7: a.y1,
     });
   }
 
   function rotacionF() {
     setResolviendo({
       ...resolviendo,
-      w3: a.o7,
-      w2: a.o4,
-      w1: a.o3,
-      g1: a.g3,
-      g2: a.g4,
-      g3: a.g7,
-      o3: a.y7,
-      o4: a.y6,
-      o7: a.y9,
-      g4: a.g6,
-      g7: a.g9,
-      y7: a.r9,
-      y6: a.r8,
-      y9: a.r1,
-      g6: a.g8,
-      g9: a.g1,
-      r9: a.w1,
-      r8: a.w2,
-      r1: a.w3,
-      g8: a.g2,
+      b1: a.b9,
+      b2: a.b8,
+      b3: a.b1,
+      b4: a.b2,
+      b6: a.b4,
+      b7: a.b3,
+      b8: a.b6,
+      b9: a.b7,
+      w9: a.o7,
+      w8: a.o6,
+      w7: a.o3,
+      y1: a.r9,
+      y4: a.r2,
+      y3: a.r1,
+      o7: a.y3,
+      o6: a.y4,
+      o3: a.y1,
+      r1: a.w9,
+      r2: a.w8,
+      r9: a.w7,
     });
   }
   function rotacionFp() {
     setResolviendo({
       ...resolviendo,
-      w3: a.r1,
-      w2: a.r8,
-      w1: a.r9,
-      g1: a.g9,
-      g2: a.g8,
-      g3: a.g1,
-      o3: a.w1,
-      o4: a.w2,
-      o7: a.w3,
-      g4: a.g2,
-      g7: a.g3,
-      y7: a.o3,
-      y6: a.o4,
-      y9: a.o7,
-      g6: a.g4,
-      g9: a.g7,
-      r9: a.y7,
-      r8: a.y6,
-      r1: a.y9,
-      g8: a.g6,
+      b1: a.b3,
+      b2: a.b4,
+      b3: a.b7,
+      b4: a.b6,
+      b6: a.b8,
+      b7: a.b9,
+      b8: a.b2,
+      b9: a.b1,
+      w9: a.r1,
+      w8: a.r2,
+      w7: a.r9,
+      y1: a.o3,
+      y4: a.o6,
+      y3: a.o7,
+      o7: a.w9,
+      o6: a.w8,
+      o3: a.w7,
+      r1: a.y3,
+      r2: a.y4,
+      r9: a.y1,
     });
   }
 
   function rotacionB() {
     setResolviendo({
       ...resolviendo,
-      w9: a.r7,
-      w8: a.r6,
-      w7: a.r3,
-      b7: a.b3,
-      b8: a.b6,
-      b9: a.b7,
-      o9: a.w7,
-      o2: a.w8,
-      o1: a.w9,
-      b2: a.b8,
-      b1: a.b9,
-      y1: a.o9,
-      y4: a.o2,
-      y3: a.o1,
-      b4: a.b2,
-      b3: a.b1,
-      r3: a.y1,
-      r6: a.y4,
-      r7: a.y3,
-      b6: a.b4,
+      g1: a.g3,
+      g2: a.g4,
+      g3: a.g7,
+      g4: a.g6,
+      g6: a.g8,
+      g7: a.g9,
+      g8: a.g2,
+      g9: a.g1,
+      o1: a.w3,
+      o8: a.w2,
+      o9: a.w1,
+      r3: a.y7,
+      r4: a.y6,
+      r7: a.y9,
+      w1: a.r3,
+      w2: a.r4,
+      w3: a.r7,
+      y7: a.o9,
+      y6: a.o8,
+      y9: a.o1,
     });
   }
   function rotacionBp() {
     setResolviendo({
       ...resolviendo,
-      w9: a.o1,
-      w8: a.o2,
-      w7: a.o9,
-      b7: a.b9,
-      b8: a.b2,
-      b9: a.b1,
-      o9: a.y1,
-      o2: a.y4,
-      o1: a.y3,
-      b2: a.b4,
-      b1: a.b3,
-      y1: a.r3,
-      y4: a.r6,
-      y3: a.r7,
-      b4: a.b6,
-      b3: a.b7,
-      r3: a.w7,
-      r6: a.w8,
-      r7: a.w9,
-      b6: a.b8,
+      g1: a.g9,
+      g2: a.g8,
+      g3: a.g1,
+      g4: a.g2,
+      g6: a.g4,
+      g7: a.g3,
+      g8: a.g6,
+      g9: a.g7,
+      o1: a.y9,
+      o8: a.y6,
+      o9: a.y7,
+      r3: a.w1,
+      r4: a.w2,
+      r7: a.w3,
+      w1: a.o9,
+      w2: a.o8,
+      w3: a.o1,
+      y7: a.r3,
+      y6: a.r4,
+      y9: a.r7,
     });
   }
   return (
@@ -458,7 +456,7 @@ const CuboRubik = () => {
       <h1>Hay </h1>
       <h1>{cantidadCoincidencias}</h1> <h1>fichas bien puestas</h1>
       {/* //* postura de botones  */}
-      <section className="m-1 grid grid-cols-6 border-2 border-black bg-slate-500">
+      <section className="m-1 grid grid-cols-6 border- bg-slate-500">
         <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
           <button
             onClick={rotacionU}
@@ -550,23 +548,23 @@ const CuboRubik = () => {
         </div>
       </section>
       <div className="containerCara">
-        {/*//todo section color green */}
+        {/*//todo section color green*/}
         <section className="caraGreen">
           <div
             className={
               resolviendo.g9[0] === "w"
-                ? "white border-t-2 border-l-2 border-black"
+                ? "white"
                 : resolviendo.g9[0] === "y"
-                ? "yellow border-t-2 border-l-2 border-black"
+                ? "yellow"
                 : resolviendo.g9[0] === "r"
-                ? "red border-t-2 border-l-2 border-black"
+                ? "red"
                 : resolviendo.g9[0] === "o"
-                ? "orange border-t-2 border-l-2 border-black"
+                ? "orange"
                 : resolviendo.g9[0] === "b"
-                ? "blue border-t-2 border-l-2 border-black"
+                ? "blue"
                 : resolviendo.g9[0] === "g"
-                ? "green border-t-2 border-l-2 border-black"
-                : "noColor border-t-2 border-l-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.g9}
@@ -574,18 +572,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.g6[0] === "w"
-                ? "white border-t-2 border-black"
+                ? "white"
                 : resolviendo.g6[0] === "y"
-                ? "yellow border-t-2 border-black"
+                ? "yellow"
                 : resolviendo.g6[0] === "r"
-                ? "red border-t-2 border-black"
+                ? "red"
                 : resolviendo.g6[0] === "o"
-                ? "orange border-t-2 border-black"
+                ? "orange"
                 : resolviendo.g6[0] === "b"
-                ? "blue border-t-2 border-black"
+                ? "blue"
                 : resolviendo.g6[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.g6}
@@ -593,18 +591,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.g7[0] === "w"
-                ? "white border-t-2 border-black"
+                ? "white"
                 : resolviendo.g7[0] === "y"
-                ? "yellow border-t-2 border-black"
+                ? "yellow"
                 : resolviendo.g7[0] === "r"
-                ? "red border-t-2 border-black"
+                ? "red"
                 : resolviendo.g7[0] === "o"
-                ? "orange border-t-2 border-black"
+                ? "orange"
                 : resolviendo.g7[0] === "b"
-                ? "blue border-t-2 border-black"
+                ? "blue"
                 : resolviendo.g7[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.g7}
@@ -612,18 +610,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.g8[0] === "w"
-                ? "white border-l-2 border-black"
+                ? "white"
                 : resolviendo.g8[0] === "y"
-                ? "yellow border-l-2 border-black"
+                ? "yellow"
                 : resolviendo.g8[0] === "r"
-                ? "red border-l-2 border-black"
+                ? "red"
                 : resolviendo.g8[0] === "o"
-                ? "orange border-l-2 border-black"
+                ? "orange"
                 : resolviendo.g8[0] === "b"
-                ? "blue border-l-2 border-black"
+                ? "blue"
                 : resolviendo.g8[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.g8}
@@ -669,18 +667,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.g1[0] === "w"
-                ? "white border-l-2 border-black"
+                ? "white"
                 : resolviendo.g1[0] === "y"
-                ? "yellow border-l-2 border-black"
+                ? "yellow"
                 : resolviendo.g1[0] === "r"
-                ? "red border-l-2 border-black"
+                ? "red"
                 : resolviendo.g1[0] === "o"
-                ? "orange border-l-2 border-black"
+                ? "orange"
                 : resolviendo.g1[0] === "b"
-                ? "blue border-l-2 border-black"
+                ? "blue"
                 : resolviendo.g1[0] === "g"
-                ? "green  border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.g1}
@@ -726,181 +724,181 @@ const CuboRubik = () => {
         </section>
       </div>
       <div className="containerCara3">
-        {/*//todo section color red */}
-        <section className="caraRed">
+        {/*//todo section color orange */}
+        <section className="caraOrange">
           <div
             className={
-              resolviendo.r9[0] === "w"
-                ? "white border-t-2 border-l-2 border-black"
-                : resolviendo.r9[0] === "y"
-                ? "yellow border-t-2 border-l-2 border-black"
-                : resolviendo.r9[0] === "r"
-                ? "red border-t-2 border-l-2 border-black"
-                : resolviendo.r9[0] === "o"
-                ? "orange border-t-2 border-l-2 border-black"
-                : resolviendo.r9[0] === "b"
-                ? "blue border-t-2 border-l-2 border-black"
-                : resolviendo.r9[0] === "g"
-                ? "green border-t-2 border-l-2 border-black"
-                : "noColor border-t-2 border-l-2 border-black"
-            }
-          >
-            {resolviendo.r9}
-          </div>
-          <div
-            className={
-              resolviendo.r8[0] === "w"
-                ? "white border-t-2 border-black"
-                : resolviendo.r8[0] === "y"
-                ? "yellow border-t-2 border-black"
-                : resolviendo.r8[0] === "r"
-                ? "red border-t-2 border-black"
-                : resolviendo.r8[0] === "o"
-                ? "orange border-t-2 border-black"
-                : resolviendo.r8[0] === "b"
-                ? "blue border-t-2 border-black"
-                : resolviendo.r8[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
-            }
-          >
-            {resolviendo.r8}
-          </div>
-          <div
-            className={
-              resolviendo.r1[0] === "w"
-                ? "white border-t-2 border-black"
-                : resolviendo.r1[0] === "y"
-                ? "yellow border-t-2 border-black"
-                : resolviendo.r1[0] === "r"
-                ? "red border-t-2 border-black"
-                : resolviendo.r1[0] === "o"
-                ? "orange border-t-2 border-black"
-                : resolviendo.r1[0] === "b"
-                ? "blue border-t-2 border-black"
-                : resolviendo.r1[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
-            }
-          >
-            {resolviendo.r1}
-          </div>
-          <div
-            className={
-              resolviendo.r2[0] === "w"
-                ? "white border-l-2 border-black"
-                : resolviendo.r2[0] === "y"
-                ? "yellow border-l-2 border-black"
-                : resolviendo.r2[0] === "r"
-                ? "red border-l-2 border-black"
-                : resolviendo.r2[0] === "o"
-                ? "orange border-l-2 border-black"
-                : resolviendo.r2[0] === "b"
-                ? "blue border-l-2 border-black"
-                : resolviendo.r2[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
-            }
-          >
-            {resolviendo.r2}
-          </div>
-          <div
-            className={
-              resolviendo.r5[0] === "w"
+              resolviendo.o9[0] === "w"
                 ? "white"
-                : resolviendo.r5[0] === "y"
+                : resolviendo.o9[0] === "y"
                 ? "yellow"
-                : resolviendo.r5[0] === "r"
+                : resolviendo.o9[0] === "r"
                 ? "red"
-                : resolviendo.r5[0] === "o"
+                : resolviendo.o9[0] === "o"
                 ? "orange"
-                : resolviendo.r5[0] === "b"
+                : resolviendo.o9[0] === "b"
                 ? "blue"
-                : resolviendo.r5[0] === "g"
+                : resolviendo.o9[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
-            {resolviendo.r5}
+            {resolviendo.o9}
           </div>
           <div
             className={
-              resolviendo.r4[0] === "w"
+              resolviendo.o8[0] === "w"
                 ? "white"
-                : resolviendo.r4[0] === "y"
+                : resolviendo.o8[0] === "y"
                 ? "yellow"
-                : resolviendo.r4[0] === "r"
+                : resolviendo.o8[0] === "r"
                 ? "red"
-                : resolviendo.r4[0] === "o"
+                : resolviendo.o8[0] === "o"
                 ? "orange"
-                : resolviendo.r4[0] === "b"
+                : resolviendo.o8[0] === "b"
                 ? "blue"
-                : resolviendo.r4[0] === "g"
+                : resolviendo.o8[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
-            {resolviendo.r4}
+            {resolviendo.o8}
           </div>
           <div
             className={
-              resolviendo.r3[0] === "w"
-                ? "white border-l-2 border-black"
-                : resolviendo.r3[0] === "y"
-                ? "yellow border-l-2 border-black"
-                : resolviendo.r3[0] === "r"
-                ? "red border-l-2 border-black"
-                : resolviendo.r3[0] === "o"
-                ? "orange border-l-2 border-black"
-                : resolviendo.r3[0] === "b"
-                ? "blue border-l-2 border-black"
-                : resolviendo.r3[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
-            }
-          >
-            {resolviendo.r3}
-          </div>
-          <div
-            className={
-              resolviendo.r6[0] === "w"
+              resolviendo.o1[0] === "w"
                 ? "white"
-                : resolviendo.r6[0] === "y"
+                : resolviendo.o1[0] === "y"
                 ? "yellow"
-                : resolviendo.r6[0] === "r"
+                : resolviendo.o1[0] === "r"
                 ? "red"
-                : resolviendo.r6[0] === "o"
+                : resolviendo.o1[0] === "o"
                 ? "orange"
-                : resolviendo.r6[0] === "b"
+                : resolviendo.o1[0] === "b"
                 ? "blue"
-                : resolviendo.r6[0] === "g"
+                : resolviendo.o1[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
-            {resolviendo.r6}
+            {resolviendo.o1}
           </div>
           <div
             className={
-              resolviendo.r7[0] === "w"
+              resolviendo.o2[0] === "w"
                 ? "white"
-                : resolviendo.r7[0] === "y"
+                : resolviendo.o2[0] === "y"
                 ? "yellow"
-                : resolviendo.r7[0] === "r"
+                : resolviendo.o2[0] === "r"
                 ? "red"
-                : resolviendo.r7[0] === "o"
+                : resolviendo.o2[0] === "o"
                 ? "orange"
-                : resolviendo.r7[0] === "b"
+                : resolviendo.o2[0] === "b"
                 ? "blue"
-                : resolviendo.r7[0] === "g"
+                : resolviendo.o2[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
-            {resolviendo.r7}
+            {resolviendo.o2}
+          </div>
+          <div
+            className={
+              resolviendo.o5[0] === "w"
+                ? "white"
+                : resolviendo.o5[0] === "y"
+                ? "yellow"
+                : resolviendo.o5[0] === "r"
+                ? "red"
+                : resolviendo.o5[0] === "o"
+                ? "orange"
+                : resolviendo.o5[0] === "b"
+                ? "blue"
+                : resolviendo.o5[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o5}
+          </div>
+          <div
+            className={
+              resolviendo.o4[0] === "w"
+                ? "white"
+                : resolviendo.o4[0] === "y"
+                ? "yellow"
+                : resolviendo.o4[0] === "r"
+                ? "red"
+                : resolviendo.o4[0] === "o"
+                ? "orange"
+                : resolviendo.o4[0] === "b"
+                ? "blue"
+                : resolviendo.o4[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o4}
+          </div>
+          <div
+            className={
+              resolviendo.o3[0] === "w"
+                ? "white"
+                : resolviendo.o3[0] === "y"
+                ? "yellow"
+                : resolviendo.o3[0] === "r"
+                ? "red"
+                : resolviendo.o3[0] === "o"
+                ? "orange"
+                : resolviendo.o3[0] === "b"
+                ? "blue"
+                : resolviendo.o3[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o3}
+          </div>
+          <div
+            className={
+              resolviendo.o6[0] === "w"
+                ? "white"
+                : resolviendo.o6[0] === "y"
+                ? "yellow"
+                : resolviendo.o6[0] === "r"
+                ? "red"
+                : resolviendo.o6[0] === "o"
+                ? "orange"
+                : resolviendo.o6[0] === "b"
+                ? "blue"
+                : resolviendo.o6[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o6}
+          </div>
+          <div
+            className={
+              resolviendo.o7[0] === "w"
+                ? "white"
+                : resolviendo.o7[0] === "y"
+                ? "yellow"
+                : resolviendo.o7[0] === "r"
+                ? "red"
+                : resolviendo.o7[0] === "o"
+                ? "orange"
+                : resolviendo.o7[0] === "b"
+                ? "blue"
+                : resolviendo.o7[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.o7}
           </div>
         </section>
-        {/*//todo section color white */}
+        {/*//todo section color white*/}
         <section className="caraWhite">
           <div
             className={
@@ -1074,199 +1072,199 @@ const CuboRubik = () => {
             {resolviendo.w9}
           </div>
         </section>
-        {/*//todo section color orange */}
-        <section className="caraOrange">
+        {/*//todo section color red*/}
+        <section className="caraRed">
           <div
             className={
-              resolviendo.o3[0] === "w"
-                ? "white border-t-2 border-black"
-                : resolviendo.o3[0] === "y"
-                ? "yellow border-t-2 border-black"
-                : resolviendo.o3[0] === "r"
-                ? "red border-t-2 border-black"
-                : resolviendo.o3[0] === "o"
-                ? "orange border-t-2 border-black"
-                : resolviendo.o3[0] === "b"
-                ? "blue border-t-2 border-black"
-                : resolviendo.o3[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
-            }
-          >
-            {resolviendo.o3}
-          </div>
-          <div
-            className={
-              resolviendo.o4[0] === "w"
-                ? "white border-t-2 border-black"
-                : resolviendo.o4[0] === "y"
-                ? "yellow border-t-2 border-black"
-                : resolviendo.o4[0] === "r"
-                ? "red border-t-2 border-black"
-                : resolviendo.o4[0] === "o"
-                ? "orange border-t-2 border-black"
-                : resolviendo.o4[0] === "b"
-                ? "blue border-t-2 border-black"
-                : resolviendo.o4[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
-            }
-          >
-            {resolviendo.o4}
-          </div>
-          <div
-            className={
-              resolviendo.o7[0] === "w"
-                ? "white border-t-2 border-black"
-                : resolviendo.o7[0] === "y"
-                ? "yellow border-t-2 border-black"
-                : resolviendo.o7[0] === "r"
-                ? "red  border-t-2 border-black"
-                : resolviendo.o7[0] === "o"
-                ? "orange  border-t-2 border-black"
-                : resolviendo.o7[0] === "b"
-                ? "blue border-t-2 border-black"
-                : resolviendo.o7[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
-            }
-          >
-            {resolviendo.o7}
-          </div>
-          <div
-            className={
-              resolviendo.o6[0] === "w"
+              resolviendo.r3[0] === "w"
                 ? "white"
-                : resolviendo.o6[0] === "y"
+                : resolviendo.r3[0] === "y"
                 ? "yellow"
-                : resolviendo.o6[0] === "r"
+                : resolviendo.r3[0] === "r"
                 ? "red"
-                : resolviendo.o6[0] === "o"
+                : resolviendo.r3[0] === "o"
                 ? "orange"
-                : resolviendo.o6[0] === "b"
+                : resolviendo.r3[0] === "b"
                 ? "blue"
-                : resolviendo.o6[0] === "g"
+                : resolviendo.r3[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
-            {resolviendo.o6}
+            {resolviendo.r3}
           </div>
           <div
             className={
-              resolviendo.o5[0] === "w"
+              resolviendo.r4[0] === "w"
                 ? "white"
-                : resolviendo.o5[0] === "y"
+                : resolviendo.r4[0] === "y"
                 ? "yellow"
-                : resolviendo.o5[0] === "r"
+                : resolviendo.r4[0] === "r"
                 ? "red"
-                : resolviendo.o5[0] === "o"
+                : resolviendo.r4[0] === "o"
                 ? "orange"
-                : resolviendo.o5[0] === "b"
+                : resolviendo.r4[0] === "b"
                 ? "blue"
-                : resolviendo.o5[0] === "g"
+                : resolviendo.r4[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
-            {resolviendo.o5}
+            {resolviendo.r4}
           </div>
           <div
             className={
-              resolviendo.o8[0] === "w"
+              resolviendo.r7[0] === "w"
                 ? "white"
-                : resolviendo.o8[0] === "y"
+                : resolviendo.r7[0] === "y"
                 ? "yellow"
-                : resolviendo.o8[0] === "r"
+                : resolviendo.r7[0] === "r"
                 ? "red"
-                : resolviendo.o8[0] === "o"
+                : resolviendo.r7[0] === "o"
                 ? "orange"
-                : resolviendo.o8[0] === "b"
+                : resolviendo.r7[0] === "b"
                 ? "blue"
-                : resolviendo.o8[0] === "g"
+                : resolviendo.r7[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
-            {resolviendo.o8}
+            {resolviendo.r7}
           </div>
           <div
             className={
-              resolviendo.o9[0] === "w"
+              resolviendo.r6[0] === "w"
                 ? "white"
-                : resolviendo.o9[0] === "y"
+                : resolviendo.r6[0] === "y"
                 ? "yellow"
-                : resolviendo.o9[0] === "r"
+                : resolviendo.r6[0] === "r"
                 ? "red"
-                : resolviendo.o9[0] === "o"
-                ? "orange"
-                : resolviendo.o9[0] === "b"
+                : resolviendo.r6[0] === "o"
+                ? "orange "
+                : resolviendo.r6[0] === "b"
                 ? "blue"
-                : resolviendo.o9[0] === "g"
+                : resolviendo.r6[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
-            {resolviendo.o9}
+            {resolviendo.r6}
           </div>
           <div
             className={
-              resolviendo.o2[0] === "w"
+              resolviendo.r5[0] === "w"
                 ? "white"
-                : resolviendo.o2[0] === "y"
+                : resolviendo.r5[0] === "y"
                 ? "yellow"
-                : resolviendo.o2[0] === "r"
+                : resolviendo.r5[0] === "r"
                 ? "red"
-                : resolviendo.o2[0] === "o"
+                : resolviendo.r5[0] === "o"
                 ? "orange"
-                : resolviendo.o2[0] === "b"
+                : resolviendo.r5[0] === "b"
                 ? "blue"
-                : resolviendo.o2[0] === "g"
+                : resolviendo.r5[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
-            {resolviendo.o2}
+            {resolviendo.r5}
           </div>
           <div
             className={
-              resolviendo.o1[0] === "w"
+              resolviendo.r8[0] === "w"
                 ? "white"
-                : resolviendo.o1[0] === "y"
+                : resolviendo.r8[0] === "y"
                 ? "yellow"
-                : resolviendo.o1[0] === "r"
+                : resolviendo.r8[0] === "r"
                 ? "red"
-                : resolviendo.o1[0] === "o"
+                : resolviendo.r8[0] === "o"
                 ? "orange"
-                : resolviendo.o1[0] === "b"
+                : resolviendo.r8[0] === "b"
                 ? "blue"
-                : resolviendo.o1[0] === "g"
+                : resolviendo.r8[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
-            {resolviendo.o1}
+            {resolviendo.r8}
+          </div>
+          <div
+            className={
+              resolviendo.r9[0] === "w"
+                ? "white"
+                : resolviendo.r9[0] === "y"
+                ? "yellow"
+                : resolviendo.r9[0] === "r"
+                ? "red"
+                : resolviendo.r9[0] === "o"
+                ? "orange "
+                : resolviendo.r9[0] === "b"
+                ? "blue"
+                : resolviendo.r9[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r9}
+          </div>
+          <div
+            className={
+              resolviendo.r2[0] === "w"
+                ? "white"
+                : resolviendo.r2[0] === "y"
+                ? "yellow"
+                : resolviendo.r2[0] === "r"
+                ? "red"
+                : resolviendo.r2[0] === "o"
+                ? "orange"
+                : resolviendo.r2[0] === "b"
+                ? "blue"
+                : resolviendo.r2[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r2}
+          </div>
+          <div
+            className={
+              resolviendo.r1[0] === "w"
+                ? "white"
+                : resolviendo.r1[0] === "y"
+                ? "yellow"
+                : resolviendo.r1[0] === "r"
+                ? "red"
+                : resolviendo.r1[0] === "o"
+                ? "orange"
+                : resolviendo.r1[0] === "b"
+                ? "blue"
+                : resolviendo.r1[0] === "g"
+                ? "green"
+                : "noColor"
+            }
+          >
+            {resolviendo.r1}
           </div>
         </section>
       </div>
       <div className="containerCara">
-        {/*//todo section color blue */}
+        {/*//todo section color blue*/}
         <section className="caraBlue">
           <div
             className={
               resolviendo.b7[0] === "w"
-                ? "white border-l-2 border-black"
+                ? "white"
                 : resolviendo.b7[0] === "y"
-                ? "yellow border-l-2 border-black"
+                ? "yellow"
                 : resolviendo.b7[0] === "r"
-                ? "red border-l-2 border-black"
+                ? "red"
                 : resolviendo.b7[0] === "o"
-                ? "orange border-l-2 border-black"
+                ? "orange "
                 : resolviendo.b7[0] === "b"
-                ? "blue border-l-2 border-black"
+                ? "blue"
                 : resolviendo.b7[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.b7}
@@ -1312,18 +1310,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.b6[0] === "w"
-                ? "white border-l-2 border-black"
+                ? "white"
                 : resolviendo.b6[0] === "y"
-                ? "yellow border-l-2 border-black"
+                ? "yellow"
                 : resolviendo.b6[0] === "r"
-                ? "red border-l-2 border-black"
+                ? "red"
                 : resolviendo.b6[0] === "o"
-                ? "orange border-l-2 border-black"
+                ? "orange "
                 : resolviendo.b6[0] === "b"
-                ? "blue border-l-2 border-black"
+                ? "blue"
                 : resolviendo.b6[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.b6}
@@ -1369,18 +1367,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.b3[0] === "w"
-                ? "white border-l-2 border-black"
+                ? "white"
                 : resolviendo.b3[0] === "y"
-                ? "yellow border-l-2 border-black"
+                ? "yellow"
                 : resolviendo.b3[0] === "r"
-                ? "red border-l-2 border-black"
+                ? "red"
                 : resolviendo.b3[0] === "o"
-                ? "orange border-l-2 border-black"
+                ? "orange "
                 : resolviendo.b3[0] === "b"
-                ? "blue border-l-2 border-black"
+                ? "blue"
                 : resolviendo.b3[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.b3}
@@ -1426,24 +1424,24 @@ const CuboRubik = () => {
         </section>
       </div>
       <div className="containerCara">
-        {/*//todo section color yellow */}
+        {/*//todo section color yellow*/}
         <section className="caraYellow">
           <div></div>
           <div
             className={
               resolviendo.g9[0] === "w"
-                ? "white border-t-2 border-l-2 border-r-2 border-black"
+                ? "white"
                 : resolviendo.g9[0] === "y"
-                ? "yellow border-t-2 border-l-2 border-black"
+                ? "yellow"
                 : resolviendo.g9[0] === "r"
-                ? "red border-t-2 border-l-2 border-black"
+                ? "red"
                 : resolviendo.g9[0] === "o"
-                ? "orange border-t-2 border-l-2 border-black"
+                ? "orange"
                 : resolviendo.g9[0] === "b"
-                ? "blue border-t-2 border-l-2 border-black"
+                ? "blue"
                 : resolviendo.g9[0] === "g"
-                ? "green border-t-2 border-l-2 border-black"
-                : "noColor border-t-2 border-l-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.g9}
@@ -1451,18 +1449,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.g6[0] === "w"
-                ? "white border-t-2 border-black"
+                ? "white"
                 : resolviendo.g6[0] === "y"
-                ? "yellow border-t-2 border-black"
+                ? "yellow"
                 : resolviendo.g6[0] === "r"
-                ? "red border-t-2 border-black"
+                ? "red"
                 : resolviendo.g6[0] === "o"
-                ? "orange border-t-2 border-black"
+                ? "orange"
                 : resolviendo.g6[0] === "b"
-                ? "blue border-t-2 border-black"
+                ? "blue"
                 : resolviendo.g6[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.g6}
@@ -1470,18 +1468,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.g7[0] === "w"
-                ? "white border-t-2 border-black"
+                ? "white"
                 : resolviendo.g7[0] === "y"
-                ? "yellow border-t-2 border-black"
+                ? "yellow"
                 : resolviendo.g7[0] === "r"
-                ? "red border-t-2 border-black"
+                ? "red"
                 : resolviendo.g7[0] === "o"
-                ? "orange border-t-2 border-black"
+                ? "orange"
                 : resolviendo.g7[0] === "b"
-                ? "blue border-t-2 border-black"
+                ? "blue"
                 : resolviendo.g7[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.g7}
@@ -1489,38 +1487,38 @@ const CuboRubik = () => {
           <div></div>
           <div
             className={
-              resolviendo.r9[0] === "w"
-                ? "white border-t-2 border-l-2 border-black"
-                : resolviendo.r9[0] === "y"
-                ? "yellow border-t-2 border-l-2 border-black"
-                : resolviendo.r9[0] === "r"
-                ? "red border-t-2 border-l-2 border-black"
-                : resolviendo.r9[0] === "o"
-                ? "orange border-t-2 border-l-2 border-black"
-                : resolviendo.r9[0] === "b"
-                ? "blue border-t-2 border-l-2 border-black"
-                : resolviendo.r9[0] === "g"
-                ? "green border-t-2 border-l-2 border-black"
-                : "noColor border-t-2 border-l-2 border-black"
+              resolviendo.o9[0] === "w"
+                ? "white"
+                : resolviendo.o9[0] === "y"
+                ? "yellow"
+                : resolviendo.o9[0] === "r"
+                ? "red"
+                : resolviendo.o9[0] === "o"
+                ? "orange"
+                : resolviendo.o9[0] === "b"
+                ? "blue"
+                : resolviendo.o9[0] === "g"
+                ? "green"
+                : "noColor"
             }
           >
-            {resolviendo.r9}
+            {resolviendo.o9}
           </div>
           <div
             className={
               resolviendo.y9[0] === "w"
-                ? "white border-l-2 border-t-2 border-black"
+                ? "white"
                 : resolviendo.y9[0] === "y"
-                ? "yellow border-l-2 border-t-2 border-black"
+                ? "yellow"
                 : resolviendo.y9[0] === "r"
-                ? "red border-l-2 border-t-2 border-black"
+                ? "red"
                 : resolviendo.y9[0] === "o"
-                ? "orange border-l-2 border-t-2 border-black"
+                ? "orange"
                 : resolviendo.y9[0] === "b"
-                ? "blue border-l-2 border-t-2 border-black"
+                ? "blue"
                 : resolviendo.y9[0] === "g"
-                ? "green border-l-2 border-t-2 border-black"
-                : "noColor border-l-2 border-t-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.y9}
@@ -1528,18 +1526,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.y6[0] === "w"
-                ? "white border-t-2 border-black"
+                ? "white"
                 : resolviendo.y6[0] === "y"
-                ? "yellow border-t-2 border-black"
+                ? "yellow"
                 : resolviendo.y6[0] === "r"
-                ? "red border-t-2 border-black"
+                ? "red"
                 : resolviendo.y6[0] === "o"
-                ? "orange border-t-2 border-black"
+                ? "orange"
                 : resolviendo.y6[0] === "b"
-                ? "blue border-t-2 border-black"
+                ? "blue"
                 : resolviendo.y6[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.y6}
@@ -1547,75 +1545,75 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.y7[0] === "w"
-                ? "white border-t-2 border-black"
+                ? "white"
                 : resolviendo.y7[0] === "y"
-                ? "yellow border-t-2 border-black"
+                ? "yellow"
                 : resolviendo.y7[0] === "r"
-                ? "red border-t-2 border-black"
+                ? "red"
                 : resolviendo.y7[0] === "o"
-                ? "orange border-t-2 border-black"
+                ? "orange"
                 : resolviendo.y7[0] === "b"
-                ? "blue border-t-2 border-black"
+                ? "blue"
                 : resolviendo.y7[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.y7}
           </div>
           <div
             className={
-              resolviendo.o7[0] === "w"
-                ? "white border-t-2 border-l-2  border-r-2 border-black"
-                : resolviendo.o7[0] === "y"
-                ? "yellow border-t-2 border-l-2 border-black"
-                : resolviendo.o7[0] === "r"
-                ? "red  border-t-2 border-l-2 border-black"
-                : resolviendo.o7[0] === "o"
-                ? "orange  border-t-2 border-l-2 border-black"
-                : resolviendo.o7[0] === "b"
-                ? "blue border-t-2 border-l-2 border-black"
-                : resolviendo.o7[0] === "g"
-                ? "green border-t-2 border-l-2 border-black"
-                : "noColor border-t-2 border-l-2 border-black"
+              resolviendo.r7[0] === "w"
+                ? "white"
+                : resolviendo.r7[0] === "y"
+                ? "yellow"
+                : resolviendo.r7[0] === "r"
+                ? "red"
+                : resolviendo.r7[0] === "o"
+                ? "orange"
+                : resolviendo.r7[0] === "b"
+                ? "blue"
+                : resolviendo.r7[0] === "g"
+                ? "green"
+                : "noColor"
             }
           >
-            {resolviendo.o7}
+            {resolviendo.r7}
           </div>
           <div
             className={
-              resolviendo.r2[0] === "w"
-                ? "white border-l-2 border-black"
-                : resolviendo.r2[0] === "y"
-                ? "yellow border-l-2 border-black"
-                : resolviendo.r2[0] === "r"
-                ? "red border-l-2 border-black"
-                : resolviendo.r2[0] === "o"
-                ? "orange border-l-2 border-black"
-                : resolviendo.r2[0] === "b"
-                ? "blue border-l-2 border-black"
-                : resolviendo.r2[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+              resolviendo.o2[0] === "w"
+                ? "white"
+                : resolviendo.o2[0] === "y"
+                ? "yellow"
+                : resolviendo.o2[0] === "r"
+                ? "red"
+                : resolviendo.o2[0] === "o"
+                ? "orange"
+                : resolviendo.o2[0] === "b"
+                ? "blue"
+                : resolviendo.o2[0] === "g"
+                ? "green"
+                : "noColor"
             }
           >
-            {resolviendo.r2}
+            {resolviendo.o2}
           </div>
           <div
             className={
               resolviendo.y2[0] === "w"
-                ? "white border-l-2 border-black"
+                ? "white"
                 : resolviendo.y2[0] === "y"
-                ? "yellow border-l-2 border-black"
+                ? "yellow"
                 : resolviendo.y2[0] === "r"
-                ? "red border-l-2 border-black"
+                ? "red"
                 : resolviendo.y2[0] === "o"
-                ? "orange border-l-2 border-black"
+                ? "orange"
                 : resolviendo.y2[0] === "b"
-                ? "blue border-l-2 border-black"
+                ? "blue"
                 : resolviendo.y2[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.y2}
@@ -1660,57 +1658,57 @@ const CuboRubik = () => {
           </div>
           <div
             className={
-              resolviendo.o8[0] === "w"
-                ? "white border-l-2 border-black"
-                : resolviendo.o8[0] === "y"
-                ? "yellow border-l-2 border-black"
-                : resolviendo.o8[0] === "r"
-                ? "red border-l-2 border-black"
-                : resolviendo.o8[0] === "o"
-                ? "orange border-l-2 border-black"
-                : resolviendo.o8[0] === "b"
-                ? "blue border-l-2 border-black"
-                : resolviendo.o8[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+              resolviendo.r8[0] === "w"
+                ? "white"
+                : resolviendo.r8[0] === "y"
+                ? "yellow"
+                : resolviendo.r8[0] === "r"
+                ? "red"
+                : resolviendo.r8[0] === "o"
+                ? "orange"
+                : resolviendo.r8[0] === "b"
+                ? "blue"
+                : resolviendo.r8[0] === "g"
+                ? "green"
+                : "noColor"
             }
           >
-            {resolviendo.o8}
+            {resolviendo.r8}
           </div>
           <div
             className={
-              resolviendo.r3[0] === "w"
-                ? "white border-l-2 border-black"
-                : resolviendo.r3[0] === "y"
-                ? "yellow border-l-2 border-black"
-                : resolviendo.r3[0] === "r"
-                ? "red border-l-2 border-black"
-                : resolviendo.r3[0] === "o"
-                ? "orange border-l-2 border-black"
-                : resolviendo.r3[0] === "b"
-                ? "blue border-l-2 border-black"
-                : resolviendo.r3[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+              resolviendo.o3[0] === "w"
+                ? "white"
+                : resolviendo.o3[0] === "y"
+                ? "yellow"
+                : resolviendo.o3[0] === "r"
+                ? "red"
+                : resolviendo.o3[0] === "o"
+                ? "orange"
+                : resolviendo.o3[0] === "b"
+                ? "blue"
+                : resolviendo.o3[0] === "g"
+                ? "green"
+                : "noColor"
             }
           >
-            {resolviendo.r3}
+            {resolviendo.o3}
           </div>
           <div
             className={
-              resolviendo.y3[0] === "w"
-                ? "white border-l-2 border-black"
+                resolviendo.y3[0] === "w"
+                ? "white"
                 : resolviendo.y3[0] === "y"
-                ? "yellow border-l-2 border-black"
+                ? "yellow"
                 : resolviendo.y3[0] === "r"
-                ? "red border-l-2 border-black"
+                ? "red"
                 : resolviendo.y3[0] === "o"
-                ? "orange border-l-2 border-black"
+                ? "orange"
                 : resolviendo.y3[0] === "b"
-                ? "blue border-l-2 border-black"
+                ? "blue"
                 : resolviendo.y3[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.y3}
@@ -1755,39 +1753,39 @@ const CuboRubik = () => {
           </div>
           <div
             className={
-              resolviendo.o1[0] === "w"
-                ? "white border-l-2 border-black"
-                : resolviendo.o1[0] === "y"
-                ? "yellow border-l-2 border-black"
-                : resolviendo.o1[0] === "r"
-                ? "red border-l-2 border-black"
-                : resolviendo.o1[0] === "o"
-                ? "orange border-l-2 border-black"
-                : resolviendo.o1[0] === "b"
-                ? "blue border-l-2 border-black"
-                : resolviendo.o1[0] === "g"
-                ? "green border-l-2 border-black"
-                : "noColor border-l-2 border-black"
+              resolviendo.r1[0] === "w"
+                ? "white"
+                : resolviendo.r1[0] === "y"
+                ? "yellow"
+                : resolviendo.r1[0] === "r"
+                ? "red"
+                : resolviendo.r1[0] === "o"
+                ? "orange"
+                : resolviendo.r1[0] === "b"
+                ? "blue"
+                : resolviendo.r1[0] === "g"
+                ? "green"
+                : "noColor"
             }
           >
-            {resolviendo.o1}
+            {resolviendo.r1}
           </div>
           <div></div>
           <div
             className={
               resolviendo.b3[0] === "w"
-                ? "white border-l-2 border-t-2 border-black"
+                ? "white"
                 : resolviendo.b3[0] === "y"
-                ? "yellow border-l-2 border-t-2 border-black"
+                ? "yellow"
                 : resolviendo.b3[0] === "r"
-                ? "red border-l-2 border-t-2 border-black"
+                ? "red"
                 : resolviendo.b3[0] === "o"
-                ? "orange border-l-2 border-t-2 border-black"
+                ? "orange"
                 : resolviendo.b3[0] === "b"
-                ? "blue border-l-2 border-t-2 border-black"
+                ? "blue"
                 : resolviendo.b3[0] === "g"
-                ? "green border-l-2 border-t-2 border-black"
-                : "noColor border-l-2 border-t-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.b3}
@@ -1795,18 +1793,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.b4[0] === "w"
-                ? "white border-t-2 border-black"
+                ? "white"
                 : resolviendo.b4[0] === "y"
-                ? "yellow border-t-2 border-black"
+                ? "yellow"
                 : resolviendo.b4[0] === "r"
-                ? "red border-t-2 border-black"
+                ? "red"
                 : resolviendo.b4[0] === "o"
-                ? "orange border-t-2 border-black"
+                ? "orange"
                 : resolviendo.b4[0] === "b"
-                ? "blue border-t-2 border-black"
+                ? "blue"
                 : resolviendo.b4[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.b4}
@@ -1814,18 +1812,18 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.b1[0] === "w"
-                ? "white border-t-2 border-black"
+                ? "white"
                 : resolviendo.b1[0] === "y"
-                ? "yellow border-t-2 border-black"
+                ? "yellow"
                 : resolviendo.b1[0] === "r"
-                ? "red border-t-2 border-black"
+                ? "red"
                 : resolviendo.b1[0] === "o"
-                ? "orange border-t-2 border-black"
+                ? "orange"
                 : resolviendo.b1[0] === "b"
-                ? "blue border-t-2 border-black"
+                ? "blue"
                 : resolviendo.b1[0] === "g"
-                ? "green border-t-2 border-black"
-                : "noColor border-t-2 border-black"
+                ? "green"
+                : "noColor"
             }
           >
             {resolviendo.b1}
