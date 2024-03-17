@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   TiArrowLeftThick,
   TiArrowRightThick,
@@ -146,6 +146,7 @@ const CuboRubik = () => {
   }
   const cantidadCoincidencias = contarIguales(resuelto, resolviendo);
   const a: Resolviendo = resolviendo;
+
   function rotacionU() {
     setResolviendo({
       ...resolviendo,
@@ -451,43 +452,149 @@ const CuboRubik = () => {
       y9: a.r7,
     });
   }
+  function desarmarCubo() {
+    setResolviendo({
+      ...resolviendo,
+      b1: "w3",
+      b2: "b4",
+      b3: "b7",
+      b4: "r2",
+      b5: "b5",
+      b6: "w4",
+      b7: "r7",
+      b8: "y2",
+      b9: "y1",
+      g1: "g1",
+      g2: "w8",
+      g3: "y3",
+      g4: "o8",
+      g5: "g5",
+      g6: "w6",
+      g7: "r9",
+      g8: "r8",
+      g9: "g9",
+      o1: "o1",
+      o2: "g2",
+      o3: "w7",
+      o4: "g6",
+      o5: "o5",
+      o6: "o4",
+      o7: "g7",
+      o8: "y8",
+      o9: "o9",
+      r1: "g3",
+      r2: "y4",
+      r3: "o3",
+      r4: "g8",
+      r5: "r5",
+      r6: "g4",
+      r7: "w9",
+      r8: "b6",
+      r9: "r1",
+      w1: "w1",
+      w2: "b8",
+      w3: "b3",
+      w4: "y6",
+      w5: "w5",
+      w6: "r4",
+      w7: "y7",
+      w8: "o2",
+      w9: "b1",
+      y1: "r3",
+      y2: "w2",
+      y3: "o7",
+      y4: "b2",
+      y5: "y5",
+      y6: "r6",
+      y7: "b9",
+      y8: "o6",
+      y9: "y9",
+    });
+  }
+  function caraAmarilla() {
+    setResolviendo({
+      ...resolviendo,
+      b1: a.b9,
+      b2: a.b2,
+      b3: a.b7,
+      b4: a.b8,
+      b5: a.b5,
+      b6: a.b6,
+      b7: a.b3,
+      b8: a.b4,
+      b9: a.b1,
+      g1: a.g9,
+      g2: a.g6,
+      g3: a.g7,
+      g4: a.g4,
+      g5: a.g5,
+      g6: a.g2,
+      g7: a.g3,
+      g8: a.g8,
+      g9: a.g1,
+      o1: a.o9,
+      o2: a.o4,
+      o4: a.o2,
+      o3: a.o7,
+      o5: a.o5,
+      o6: a.o6,
+      o7: a.o3,
+      o8: a.o8,
+      o9: a.o1,
+      r1: a.r9,
+      r2: a.r2,
+      r3: a.r7,
+      r4: a.r4,
+      r5: a.r5,
+      r6: a.r8,
+      r7: a.r3,
+      r8: a.r6,
+      r9: a.r1,
+      w1: a.y9,
+      w2: a.y6,
+      w3: a.y7,
+      w4: a.y2,
+      w5: a.y5,
+      w6: a.y8,
+      w7: a.y3,
+      w8: a.y4,
+      w9: a.y1,
+      y1: a.w9,
+      y2: a.w4,
+      y3: a.w7,
+      y4: a.w8,
+      y5: a.w5,
+      y6: a.w2,
+      y7: a.w3,
+      y8: a.w6,
+      y9: a.w1,
+    });
+  }
+  console.log(resolviendo);
   return (
     <div className="w-2/5 m-4  justify-center items-center">
       <h1>Hay </h1>
       <h1>{cantidadCoincidencias}</h1> <h1>fichas bien puestas</h1>
       {/* //* postura de botones  */}
       <section className="m-1 grid grid-cols-6 border- bg-slate-500">
-        <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
+        {/*//* rotacion F  */}
+        {/* <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
           <button
-            onClick={rotacionU}
+            onClick={rotacionF}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
           >
-            U <TiArrowLeftThick className="m-auto" />
+            F <TiArrowRightThick className="m-auto" />
           </button>
           <button
-            onClick={rotacionUp}
+            onClick={rotacionFp}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
           >
-            U` <TiArrowRightThick className="m-auto" />
+            F` <TiArrowLeftThick className="m-auto" />
           </button>
-        </div>
+        </div> */}
 
-        <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
-          <button
-            onClick={rotacionD}
-            className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
-          >
-            D <TiArrowRightThick className="m-auto" />
-          </button>
-          <button
-            onClick={rotacionDp}
-            className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
-          >
-            D` <TiArrowLeftThick className="m-auto" />
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
+        {/*//* rotacion L  */}
+        {/* <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
           <button
             onClick={rotacionL}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
@@ -500,9 +607,10 @@ const CuboRubik = () => {
           >
             L` <TiArrowUpThick className="m-auto" />
           </button>
-        </div>
+        </div> */}
 
-        <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
+        {/*//* rotacion R  */}
+        {/* <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
           <button
             onClick={rotacionR}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
@@ -515,24 +623,10 @@ const CuboRubik = () => {
           >
             R` <TiArrowDownThick className="m-auto" />
           </button>
-        </div>
+        </div> */}
 
-        <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
-          <button
-            onClick={rotacionF}
-            className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
-          >
-            F <TiArrowLeftThick className="m-auto" />
-          </button>
-          <button
-            onClick={rotacionFp}
-            className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
-          >
-            F` <TiArrowRightThick className="m-auto" />
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
+        {/*//* rotacion B  */}
+        {/* <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
           <button
             onClick={rotacionB}
             className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
@@ -545,7 +639,45 @@ const CuboRubik = () => {
           >
             B` <TiArrowRightThick className="m-auto" />
           </button>
-        </div>
+        </div> */}
+
+        {/*//* rotacion U  */}
+        {/* <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
+          <button
+            onClick={rotacionU}
+            className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
+          >
+            U <TiArrowRightThick className="m-auto" />
+          </button>
+          <button
+            onClick={rotacionUp}
+            className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
+          >
+            U` <TiArrowLeftThick className="m-auto" />
+          </button>
+        </div> */}
+
+        {/*//* rotacion D  */}
+        {/* <div className="grid grid-cols-1 text-xl font-bold m-1 mx-auto">
+          <button
+            onClick={rotacionD}
+            className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
+          >
+            D <TiArrowRightThick className="m-auto" />
+          </button>
+          <button
+            onClick={rotacionDp}
+            className="m-1 border-2 border-slate-600 w-9 cursor-pointer bg-slate-700"
+          >
+            D` <TiArrowLeftThick className="m-auto" />
+          </button>
+        </div> */}
+        <button className="btn" onClick={desarmarCubo}>
+          desarmar cubo
+        </button>
+        <button className="btn" onClick={caraAmarilla}>
+          cara amarilla
+        </button>
       </section>
       <div className="containerCara">
         {/*//todo section color green*/}
@@ -553,21 +685,24 @@ const CuboRubik = () => {
           <div
             className={
               resolviendo.g9[0] === "w"
-                ? "white"
+                ? "white grid grid-cols-2"
                 : resolviendo.g9[0] === "y"
-                ? "yellow"
+                ? "yellow grid grid-cols-2"
                 : resolviendo.g9[0] === "r"
-                ? "red"
+                ? "red grid grid-cols-2"
                 : resolviendo.g9[0] === "o"
-                ? "orange"
+                ? "orange grid grid-cols-2"
                 : resolviendo.g9[0] === "b"
-                ? "blue"
+                ? "blue grid grid-cols-2"
                 : resolviendo.g9[0] === "g"
                 ? "green"
                 : "noColor"
             }
           >
             {resolviendo.g9}
+            <button className="btn" onClick={rotacionD}>
+              d<TiArrowLeftThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -606,6 +741,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.g7}
+            <button className="btn" onClick={rotacionDp}>
+              d`
+              <TiArrowRightThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -625,6 +764,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.g8}
+            <button className="btn" onClick={rotacionLp}>
+              l`
+              <TiArrowUpThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -663,6 +806,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.g4}
+            <button className="btn" onClick={rotacionR}>
+              r<TiArrowUpThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -682,6 +828,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.g1}
+            <button className="btn" onClick={rotacionUp}>
+              u`
+              <TiArrowLeftThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -720,6 +870,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.g3}
+            <button className="btn" onClick={rotacionU}>
+              u<TiArrowRightThick className="m-auto" />
+            </button>
           </div>
         </section>
       </div>
@@ -744,6 +897,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.o9}
+            <button className="btn" onClick={rotacionDp}>
+              d`
+              <TiArrowUpThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -763,6 +920,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.o8}
+            <button className="btn" onClick={rotacionB}>
+              b<TiArrowLeftThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -782,6 +942,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.o1}
+            <button className="btn" onClick={rotacionU}>
+              u<TiArrowUpThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -858,6 +1021,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.o3}
+            <button className="btn" onClick={rotacionD}>
+              d<TiArrowDownThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -877,6 +1043,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.o6}
+            <button className="btn" onClick={rotacionFp}>
+              f`
+              <TiArrowLeftThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -896,6 +1066,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.o7}
+            <button className="btn" onClick={rotacionUp}>
+              u`
+              <TiArrowDownThick className="m-auto" />
+            </button>
           </div>
         </section>
         {/*//todo section color white*/}
@@ -1092,6 +1266,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.r3}
+            <button className="btn" onClick={rotacionUp}>
+              u`
+              <TiArrowUpThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -1111,6 +1289,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.r4}
+            <button className="btn" onClick={rotacionBp}>
+              b`
+              <TiArrowRightThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -1130,6 +1312,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.r7}
+            <button className="btn" onClick={rotacionD}>
+              d<TiArrowUpThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -1206,6 +1391,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.r9}
+            <button className="btn" onClick={rotacionU}>
+              u<TiArrowDownThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -1225,6 +1413,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.r2}
+            <button className="btn" onClick={rotacionF}>
+              f<TiArrowRightThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -1244,6 +1435,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.r1}
+            <button className="btn" onClick={rotacionDp}>
+              d`
+              <TiArrowDownThick className="m-auto" />
+            </button>
           </div>
         </section>
       </div>
@@ -1268,6 +1463,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.b7}
+            <button className="btn" onClick={rotacionU}>
+              u<TiArrowLeftThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -1306,6 +1504,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.b9}
+            <button className="btn" onClick={rotacionUp}>
+              u`
+              <TiArrowRightThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -1325,6 +1527,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.b6}
+            <button className="btn" onClick={rotacionL}>
+              l<TiArrowDownThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -1363,6 +1568,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.b2}
+            <button className="btn" onClick={rotacionRp}>
+              r`
+              <TiArrowDownThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -1382,6 +1591,10 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.b3}
+            <button className="btn" onClick={rotacionDp}>
+              d`
+              <TiArrowLeftThick className="m-auto" />
+            </button>
           </div>
           <div
             className={
@@ -1420,6 +1633,9 @@ const CuboRubik = () => {
             }
           >
             {resolviendo.b1}
+            <button className="btn" onClick={rotacionD}>
+              d<TiArrowRightThick className="m-auto" />
+            </button>
           </div>
         </section>
       </div>
@@ -1696,7 +1912,7 @@ const CuboRubik = () => {
           </div>
           <div
             className={
-                resolviendo.y3[0] === "w"
+              resolviendo.y3[0] === "w"
                 ? "white"
                 : resolviendo.y3[0] === "y"
                 ? "yellow"
@@ -1828,9 +2044,47 @@ const CuboRubik = () => {
           >
             {resolviendo.b1}
           </div>
-          <div></div>
+          <div>
+            <h1></h1>
+          </div>
         </section>
       </div>
+      <div>
+        <h1 className="uppercase">tutorial</h1>
+        <p>
+          aqui encontreremos todo lo que usted necesita para poder armar este
+          cubo rubik
+        </p>
+        <h2 className="uppercase">botones</h2>
+        <p>
+          en este titulo encontra el funcionamiento de cada uno de los botones
+        </p>
+        <h3 className="uppercase">boton f y f`</h3>
+        <p>
+          F (Front): Capa Frontal por lo tanto va a rotar todas la cara frontal
+          del cubo que quiere decir que el color azul rotara sobre si mismo pero
+          las piesas al rededor del azul rotaran en sentido de las manesillas
+          del reloj por lo tanto si esta armado el cubo las piesas blancas iran
+          a la cara roja y la cara roja a la amarilla la amarilla a la cara
+          naranja y la cara naranja a la cara blancas. ahora como nosotros
+          estamos en dos dimenciones es un poco mas complejo pero facil cuando
+          doy F la cara azul rota hacia la derecha y si oprimo F` entonces
+          iremos hacia la izquierda.
+        </p>
+        <h3 className="uppercase">boton l y l`</h3>
+        <p>L (Left): Capa Izquierda</p>
+        <h3 className="uppercase">boton r y r`</h3>
+        <p>R (Right): Capa Derecha</p>
+        <h3 className="uppercase">boton b y b`</h3>
+        <p>B (Back): Capa Trasera</p>
+        <h3 className="uppercase">boton u y u`</h3>
+        <p>U (Up): Capa Superior</p>
+
+        <h3 className="uppercase">boton d y d`</h3>
+        <p>D (Down): Capa Inferior</p>
+      </div>
+      <p>arista Azul y rojo d`,r`,d,r,d,f,d`,f`</p>
+      <p>arista verde y rojo </p>
     </div>
   );
 };

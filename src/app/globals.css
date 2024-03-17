@@ -35,23 +35,26 @@ body {
 }
 
 .white {
-  @apply bg-white border-2  border-black h-10  uppercase;
+  @apply bg-white border-2 border-black h-10 flex justify-center items-center font-bold;
 }
 .yellow {
-  @apply bg-yellow-500 border-2  border-black h-10  uppercase;
+  @apply bg-yellow-300 border-2 border-black h-10 flex justify-center items-center font-bold;
 }
 .red {
-  @apply bg-red-500 border-2  border-black h-10  uppercase;
+  @apply bg-red-600 border-2 border-black h-10 flex justify-center items-center font-bold;
 }
 .orange {
-  @apply bg-orange-500 border-2  border-black h-10  uppercase;
+  @apply bg-orange-600 border-2 border-black h-10 flex justify-center items-center font-bold;
 }
 .green {
-  @apply bg-green-500 border-2  border-black h-10  uppercase;
+  @apply bg-green-600 border-2 border-black h-10 flex justify-center items-center font-bold;
 }
 .blue {
-  @apply bg-blue-500 border-2  border-black h-10  uppercase;
+  @apply bg-blue-600 border-2 border-black h-10 flex justify-center items-center font-bold;
 }
-.noColor{
-  @apply bg-gray-500 border-2  border-black h-10  uppercase;
+.noColor {
+  @apply bg-gray-500 border-2 border-black h-10 flex justify-center items-center font-bold;
+}
+.btn {
+  @apply uppercase hover:bg-slate-500 text-sm 
 }
