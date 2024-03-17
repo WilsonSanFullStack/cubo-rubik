@@ -35,26 +35,50 @@ body {
 }
 
 .white {
-  @apply bg-white border-2 border-black h-10 flex justify-center items-center font-bold;
+  @apply bg-white border border-black h-10 flex justify-center items-center font-bold;
 }
 .yellow {
-  @apply bg-yellow-300 border-2 border-black h-10 flex justify-center items-center font-bold;
+  @apply bg-yellow-500 border border-black h-10 flex justify-center items-center font-bold;
 }
 .red {
-  @apply bg-red-600 border-2 border-black h-10 flex justify-center items-center font-bold;
+  @apply bg-red-500 border border-black h-10 flex justify-center items-center font-bold;
 }
 .orange {
-  @apply bg-orange-600 border-2 border-black h-10 flex justify-center items-center font-bold;
+  @apply bg-orange-500 border border-black h-10 flex justify-center items-center font-bold;
 }
 .green {
-  @apply bg-green-600 border-2 border-black h-10 flex justify-center items-center font-bold;
+  @apply bg-green-500 border border-black h-10 flex justify-center items-center font-bold;
 }
 .blue {
-  @apply bg-blue-600 border-2 border-black h-10 flex justify-center items-center font-bold;
+  @apply bg-blue-500 border border-black h-10 flex justify-center items-center font-bold;
 }
 .noColor {
-  @apply bg-gray-500 border-2 border-black h-10 flex justify-center items-center font-bold;
+  @apply bg-gray-500 border border-black h-10 flex justify-center items-center font-bold;
 }
 .btn {
   @apply uppercase hover:bg-slate-500 text-sm 
+}
+.containerCaras:hover .ygo9{
+  @apply border-fuchsia-400 border-4 rounded-xl
+}
+.containerCaras:hover .wbr9{
+  @apply border-fuchsia-400 border-4 rounded-xl
+}
+.containerCaras:hover .wg01{
+  @apply border-violet-400 border-4 rounded-xl
+}
+.containerCaras:hover .ygr7{
+  @apply border-violet-400 border-4 rounded-xl
+}
+.containerCaras:hover .wob7{
+  @apply border-amber-200 border-4 rounded-xl
+}
+.containerCaras:hover .yrb1{
+  @apply border-amber-200 border-4 rounded-xl
+}
+.containerCaras:hover .yob3{
+  @apply border-rose-400 border-4 rounded-xl
+}
+.containerCaras:hover .wrg3{
+  @apply border-rose-400 border-4 rounded-xl
 }
