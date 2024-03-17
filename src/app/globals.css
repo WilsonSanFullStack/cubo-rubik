@@ -16,22 +16,22 @@ body {
   @apply flex grid-cols-3 justify-center items-center;
 }
 .caraWhite {
-  @apply grid grid-cols-3 border-2 border-black  w-40 text-center text-black;
+  @apply grid grid-cols-3   w-40 text-center text-black;
 }
 .caraYellow {
   @apply grid grid-cols-5 w-72 m-10 text-center text-black;
 }
 .caraRed {
-  @apply grid grid-cols-3 w-40 m-1 border-2 border-black  text-center text-black;
+  @apply grid grid-cols-3 w-40   text-center text-black;
 }
 .caraOrange {
-  @apply grid grid-cols-3 w-40 m-1 border-2 border-black  text-center text-black;
+  @apply grid grid-cols-3 w-40   text-center text-black;
 }
 .caraGreen {
-  @apply grid grid-cols-3 w-40 m-1 border-2 border-black  text-center text-black;
+  @apply grid grid-cols-3 w-40   text-center text-black;
 }
 .caraBlue {
-  @apply grid grid-cols-3 w-40 m-1 border-2 border-black  text-center text-black;
+  @apply grid grid-cols-3 w-40  text-center text-black;
 }
 
 .white {

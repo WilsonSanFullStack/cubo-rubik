@@ -575,7 +575,7 @@ const CuboRubik = () => {
       resuelto
     )
   }
-  console.log(resolviendo);
+  // console.log(resolviendo);
   return (
     <div className="w-2/5 m-4  justify-center items-center">
       <h1>Hay </h1>
