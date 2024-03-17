@@ -699,7 +699,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g9}
+            {/* {resolviendo.g9} */}
             <button className="btn" onClick={rotacionD}>
               d<TiArrowLeftThick className="m-auto" />
             </button>
@@ -721,7 +721,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g6}
+            {/* {resolviendo.g6} */}
           </div>
           <div
             className={
@@ -740,7 +740,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g7}
+            {/* {resolviendo.g7} */}
             <button className="btn" onClick={rotacionDp}>
               d`
               <TiArrowRightThick className="m-auto" />
@@ -763,7 +763,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g8}
+            {/* {resolviendo.g8} */}
             <button className="btn" onClick={rotacionLp}>
               l`
               <TiArrowUpThick className="m-auto" />
@@ -786,7 +786,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g5}
+            {/* {resolviendo.g5} */}
           </div>
           <div
             className={
@@ -805,7 +805,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g4}
+            {/* {resolviendo.g4} */}
             <button className="btn" onClick={rotacionR}>
               r<TiArrowUpThick className="m-auto" />
             </button>
@@ -827,7 +827,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g1}
+            {/* {resolviendo.g1} */}
             <button className="btn" onClick={rotacionUp}>
               u`
               <TiArrowLeftThick className="m-auto" />
@@ -850,7 +850,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g2}
+            {/* {resolviendo.g2} */}
           </div>
           <div
             className={
@@ -869,7 +869,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g3}
+            {/* {resolviendo.g3} */}
             <button className="btn" onClick={rotacionU}>
               u<TiArrowRightThick className="m-auto" />
             </button>
@@ -896,7 +896,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o9}
+            {/* {resolviendo.o9} */}
             <button className="btn" onClick={rotacionDp}>
               d`
               <TiArrowUpThick className="m-auto" />
@@ -919,7 +919,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o8}
+            {/* {resolviendo.o8} */}
             <button className="btn" onClick={rotacionB}>
               b<TiArrowLeftThick className="m-auto" />
             </button>
@@ -941,7 +941,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o1}
+            {/* {resolviendo.o1} */}
             <button className="btn" onClick={rotacionU}>
               u<TiArrowUpThick className="m-auto" />
             </button>
@@ -963,7 +963,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o2}
+            {/* {resolviendo.o2} */}
           </div>
           <div
             className={
@@ -982,7 +982,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o5}
+            {/* {resolviendo.o5} */}
           </div>
           <div
             className={
@@ -1001,7 +1001,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o4}
+            {/* {resolviendo.o4} */}
           </div>
           <div
             className={
@@ -1020,7 +1020,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o3}
+            {/* {resolviendo.o3} */}
             <button className="btn" onClick={rotacionD}>
               d<TiArrowDownThick className="m-auto" />
             </button>
@@ -1042,7 +1042,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o6}
+            {/* {resolviendo.o6} */}
             <button className="btn" onClick={rotacionFp}>
               f`
               <TiArrowLeftThick className="m-auto" />
@@ -1065,7 +1065,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o7}
+            {/* {resolviendo.o7} */}
             <button className="btn" onClick={rotacionUp}>
               u`
               <TiArrowDownThick className="m-auto" />
@@ -1091,7 +1091,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.w1}
+            {/* {resolviendo.w1} */}
           </div>
           <div
             className={
@@ -1110,7 +1110,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.w2}
+            {/* {resolviendo.w2} */}
           </div>
           <div
             className={
@@ -1129,7 +1129,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.w3}
+            {/* {resolviendo.w3} */}
           </div>
           <div
             className={
@@ -1148,7 +1148,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.w4}
+            {/* {resolviendo.w4} */}
           </div>
           <div
             className={
@@ -1167,7 +1167,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.w5}
+            {/* {resolviendo.w5} */}
           </div>
           <div
             className={
@@ -1186,7 +1186,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.w6}
+            {/* {resolviendo.w6} */}
           </div>
           <div
             className={
@@ -1205,7 +1205,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.w7}
+            {/* {resolviendo.w7} */}
           </div>
           <div
             className={
@@ -1224,7 +1224,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.w8}
+            {/* {resolviendo.w8} */}
           </div>
           <div
             className={
@@ -1243,7 +1243,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.w9}
+            {/* {resolviendo.w9} */}
           </div>
         </section>
         {/*//todo section color red*/}
@@ -1265,7 +1265,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r3}
+            {/* {resolviendo.r3} */}
             <button className="btn" onClick={rotacionUp}>
               u`
               <TiArrowUpThick className="m-auto" />
@@ -1288,7 +1288,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r4}
+            {/* {resolviendo.r4} */}
             <button className="btn" onClick={rotacionBp}>
               b`
               <TiArrowRightThick className="m-auto" />
@@ -1311,7 +1311,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r7}
+            {/* {resolviendo.r7} */}
             <button className="btn" onClick={rotacionD}>
               d<TiArrowUpThick className="m-auto" />
             </button>
@@ -1333,7 +1333,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r6}
+            {/* {resolviendo.r6} */}
           </div>
           <div
             className={
@@ -1352,7 +1352,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r5}
+            {/* {resolviendo.r5} */}
           </div>
           <div
             className={
@@ -1371,7 +1371,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r8}
+            {/* {resolviendo.r8} */}
           </div>
           <div
             className={
@@ -1390,7 +1390,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r9}
+            {/* {resolviendo.r9} */}
             <button className="btn" onClick={rotacionU}>
               u<TiArrowDownThick className="m-auto" />
             </button>
@@ -1412,7 +1412,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r2}
+            {/* {resolviendo.r2} */}
             <button className="btn" onClick={rotacionF}>
               f<TiArrowRightThick className="m-auto" />
             </button>
@@ -1434,7 +1434,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r1}
+            {/* {resolviendo.r1} */}
             <button className="btn" onClick={rotacionDp}>
               d`
               <TiArrowDownThick className="m-auto" />
@@ -1462,7 +1462,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b7}
+            {/* {resolviendo.b7} */}
             <button className="btn" onClick={rotacionU}>
               u<TiArrowLeftThick className="m-auto" />
             </button>
@@ -1484,7 +1484,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b8}
+            {/* {resolviendo.b8} */}
           </div>
           <div
             className={
@@ -1503,7 +1503,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b9}
+            {/* {resolviendo.b9} */}
             <button className="btn" onClick={rotacionUp}>
               u`
               <TiArrowRightThick className="m-auto" />
@@ -1526,7 +1526,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b6}
+            {/* {resolviendo.b6} */}
             <button className="btn" onClick={rotacionL}>
               l<TiArrowDownThick className="m-auto" />
             </button>
@@ -1548,7 +1548,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b5}
+            {/* {resolviendo.b5} */}
           </div>
           <div
             className={
@@ -1567,7 +1567,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b2}
+            {/* {resolviendo.b2} */}
             <button className="btn" onClick={rotacionRp}>
               r`
               <TiArrowDownThick className="m-auto" />
@@ -1590,7 +1590,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b3}
+            {/* {resolviendo.b3} */}
             <button className="btn" onClick={rotacionDp}>
               d`
               <TiArrowLeftThick className="m-auto" />
@@ -1613,7 +1613,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b4}
+            {/* {resolviendo.b4} */}
           </div>
           <div
             className={
@@ -1632,7 +1632,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b1}
+            {/* {resolviendo.b1} */}
             <button className="btn" onClick={rotacionD}>
               d<TiArrowRightThick className="m-auto" />
             </button>
@@ -1660,7 +1660,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g9}
+            {/* {resolviendo.g9} */}
           </div>
           <div
             className={
@@ -1679,7 +1679,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g6}
+            {/* {resolviendo.g6} */}
           </div>
           <div
             className={
@@ -1698,7 +1698,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.g7}
+            {/* {resolviendo.g7} */}
           </div>
           <div></div>
           <div
@@ -1718,7 +1718,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o9}
+            {/* {resolviendo.o9} */}
           </div>
           <div
             className={
@@ -1737,7 +1737,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.y9}
+            {/* {resolviendo.y9} */}
           </div>
           <div
             className={
@@ -1756,7 +1756,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.y6}
+            {/* {resolviendo.y6} */}
           </div>
           <div
             className={
@@ -1775,7 +1775,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.y7}
+            {/* {resolviendo.y7} */}
           </div>
           <div
             className={
@@ -1794,7 +1794,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r7}
+            {/* {resolviendo.r7} */}
           </div>
           <div
             className={
@@ -1813,7 +1813,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o2}
+            {/* {resolviendo.o2} */}
           </div>
           <div
             className={
@@ -1832,7 +1832,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.y2}
+            {/* {resolviendo.y2} */}
           </div>
           <div
             className={
@@ -1851,7 +1851,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.y5}
+            {/* {resolviendo.y5} */}
           </div>
           <div
             className={
@@ -1870,7 +1870,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.y8}
+            {/* {resolviendo.y8} */}
           </div>
           <div
             className={
@@ -1889,7 +1889,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r8}
+            {/* {resolviendo.r8} */}
           </div>
           <div
             className={
@@ -1908,7 +1908,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.o3}
+            {/* {resolviendo.o3} */}
           </div>
           <div
             className={
@@ -1927,7 +1927,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.y3}
+            {/* {resolviendo.y3} */}
           </div>
           <div
             className={
@@ -1946,7 +1946,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.y4}
+            {/* {resolviendo.y4} */}
           </div>
           <div
             className={
@@ -1965,7 +1965,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.y1}
+            {/* {resolviendo.y1} */}
           </div>
           <div
             className={
@@ -1984,7 +1984,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.r1}
+            {/* {resolviendo.r1} */}
           </div>
           <div></div>
           <div
@@ -2004,7 +2004,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b3}
+            {/* {resolviendo.b3} */}
           </div>
           <div
             className={
@@ -2023,7 +2023,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b4}
+            {/* {resolviendo.b4} */}
           </div>
           <div
             className={
@@ -2042,7 +2042,7 @@ const CuboRubik = () => {
                 : "noColor"
             }
           >
-            {resolviendo.b1}
+            {/* {resolviendo.b1} */}
           </div>
           <div>
             <h1></h1>
